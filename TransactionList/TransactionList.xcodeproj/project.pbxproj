@@ -15,6 +15,9 @@
 		1744F5291F676849007B4681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1744F5271F676849007B4681 /* LaunchScreen.storyboard */; };
 		1744F5341F67684A007B4681 /* TransactionListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F5331F67684A007B4681 /* TransactionListTests.m */; };
 		1744F53F1F67684A007B4681 /* TransactionListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F53E1F67684A007B4681 /* TransactionListUITests.m */; };
+		176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413EE1F6827FA00AC304B /* ZJLTabBar.m */; };
+		176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413F11F68282900AC304B /* ZJLTabBarController.m */; };
+		176413F51F68287800AC304B /* ZJLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413F41F68287800AC304B /* ZJLNavigationController.m */; };
 		9ACBF4D77E1A8FF627EAD2C9 /* libPods-TransactionList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7338682C28A546AFA182DCEE /* libPods-TransactionList.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,12 @@
 		1744F53A1F67684A007B4681 /* TransactionListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1744F53E1F67684A007B4681 /* TransactionListUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionListUITests.m; sourceTree = "<group>"; };
 		1744F5401F67684A007B4681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		176413ED1F6827FA00AC304B /* ZJLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLTabBar.h; sourceTree = "<group>"; };
+		176413EE1F6827FA00AC304B /* ZJLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLTabBar.m; sourceTree = "<group>"; };
+		176413F01F68282900AC304B /* ZJLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLTabBarController.h; sourceTree = "<group>"; };
+		176413F11F68282900AC304B /* ZJLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLTabBarController.m; sourceTree = "<group>"; };
+		176413F31F68287800AC304B /* ZJLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLNavigationController.h; sourceTree = "<group>"; };
+		176413F41F68287800AC304B /* ZJLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLNavigationController.m; sourceTree = "<group>"; };
 		7338682C28A546AFA182DCEE /* libPods-TransactionList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransactionList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B653BDF32043E77691B281 /* Pods-TransactionList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionList/Pods-TransactionList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +220,7 @@
 		1744F55A1F678FD0007B4681 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				176413EA1F68278B00AC304B /* MainFrame */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -289,6 +299,35 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		176413EA1F68278B00AC304B /* MainFrame */ = {
+			isa = PBXGroup;
+			children = (
+				176413EC1F6827CF00AC304B /* Controller */,
+				176413EB1F6827BD00AC304B /* View */,
+			);
+			name = MainFrame;
+			sourceTree = "<group>";
+		};
+		176413EB1F6827BD00AC304B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				176413ED1F6827FA00AC304B /* ZJLTabBar.h */,
+				176413EE1F6827FA00AC304B /* ZJLTabBar.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		176413EC1F6827CF00AC304B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				176413F01F68282900AC304B /* ZJLTabBarController.h */,
+				176413F11F68282900AC304B /* ZJLTabBarController.m */,
+				176413F31F68287800AC304B /* ZJLNavigationController.h */,
+				176413F41F68287800AC304B /* ZJLNavigationController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		7E89CEDA06CCF7158210340D /* Frameworks */ = {
@@ -498,8 +537,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176413F51F68287800AC304B /* ZJLNavigationController.m in Sources */,
 				1744F5211F676849007B4681 /* ViewController.m in Sources */,
 				1744F51E1F676849007B4681 /* AppDelegate.m in Sources */,
+				176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */,
+				176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */,
 				1744F51B1F676849007B4681 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
