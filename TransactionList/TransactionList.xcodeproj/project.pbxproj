@@ -15,6 +15,7 @@
 		1744F5291F676849007B4681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1744F5271F676849007B4681 /* LaunchScreen.storyboard */; };
 		1744F5341F67684A007B4681 /* TransactionListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F5331F67684A007B4681 /* TransactionListTests.m */; };
 		1744F53F1F67684A007B4681 /* TransactionListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F53E1F67684A007B4681 /* TransactionListUITests.m */; };
+		9ACBF4D77E1A8FF627EAD2C9 /* libPods-TransactionList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7338682C28A546AFA182DCEE /* libPods-TransactionList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011159C39A5678A6FED230D5 /* Pods-TransactionList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionList/Pods-TransactionList.debug.xcconfig"; sourceTree = "<group>"; };
 		1744F5161F676849007B4681 /* TransactionList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1744F51A1F676849007B4681 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1744F51C1F676849007B4681 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		1744F53A1F67684A007B4681 /* TransactionListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1744F53E1F67684A007B4681 /* TransactionListUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionListUITests.m; sourceTree = "<group>"; };
 		1744F5401F67684A007B4681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7338682C28A546AFA182DCEE /* libPods-TransactionList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransactionList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B653BDF32043E77691B281 /* Pods-TransactionList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionList/Pods-TransactionList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACBF4D77E1A8FF627EAD2C9 /* libPods-TransactionList.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				1744F5321F67684A007B4681 /* TransactionListTests */,
 				1744F53D1F67684A007B4681 /* TransactionListUITests */,
 				1744F5171F676849007B4681 /* Products */,
+				ED48B7B857D5C787B6AFAA62 /* Pods */,
+				7E89CEDA06CCF7158210340D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +108,9 @@
 		1744F5181F676849007B4681 /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
-				1744F51C1F676849007B4681 /* AppDelegate.h */,
-				1744F51D1F676849007B4681 /* AppDelegate.m */,
+				1744F5551F678F5E007B4681 /* Resource */,
+				1744F5541F678F53007B4681 /* Class */,
+				1744F5531F678F45007B4681 /* APPDelegate */,
 				1744F51F1F676849007B4681 /* ViewController.h */,
 				1744F5201F676849007B4681 /* ViewController.m */,
 				1744F5221F676849007B4681 /* Main.storyboard */,
@@ -140,6 +148,166 @@
 			path = TransactionListUITests;
 			sourceTree = "<group>";
 		};
+		1744F5531F678F45007B4681 /* APPDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1744F51C1F676849007B4681 /* AppDelegate.h */,
+				1744F51D1F676849007B4681 /* AppDelegate.m */,
+			);
+			name = APPDelegate;
+			sourceTree = "<group>";
+		};
+		1744F5541F678F53007B4681 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				1744F55E1F679001007B4681 /* Vendors */,
+				1744F55D1F678FF5007B4681 /* Sections */,
+				1744F55C1F678FE5007B4681 /* Macro */,
+				1744F55B1F678FD9007B4681 /* Helpers */,
+				1744F55A1F678FD0007B4681 /* General */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		1744F5551F678F5E007B4681 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1744F5591F678FB0007B4681 /* Videos */,
+				1744F5581F678FA6007B4681 /* Sound */,
+				1744F5571F678F9B007B4681 /* Images */,
+				1744F5561F678F93007B4681 /* Fonts */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		1744F5561F678F93007B4681 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		1744F5571F678F9B007B4681 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		1744F5581F678FA6007B4681 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
+		1744F5591F678FB0007B4681 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
+		1744F55A1F678FD0007B4681 /* General */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		1744F55B1F678FD9007B4681 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		1744F55C1F678FE5007B4681 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Macro;
+			sourceTree = "<group>";
+		};
+		1744F55D1F678FF5007B4681 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
+		1744F55E1F679001007B4681 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				1744F5641F679058007B4681 /* Views */,
+				1744F5631F679050007B4681 /* Public */,
+				1744F5621F679048007B4681 /* Models */,
+				1744F5611F679040007B4681 /* Core */,
+				1744F5601F679035007B4681 /* Categories */,
+				1744F55F1F67902F007B4681 /* Base */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		1744F55F1F67902F007B4681 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		1744F5601F679035007B4681 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		1744F5611F679040007B4681 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		1744F5621F679048007B4681 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1744F5631F679050007B4681 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		1744F5641F679058007B4681 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7E89CEDA06CCF7158210340D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7338682C28A546AFA182DCEE /* libPods-TransactionList.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED48B7B857D5C787B6AFAA62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				011159C39A5678A6FED230D5 /* Pods-TransactionList.debug.xcconfig */,
+				95B653BDF32043E77691B281 /* Pods-TransactionList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +315,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1744F5431F67684A007B4681 /* Build configuration list for PBXNativeTarget "TransactionList" */;
 			buildPhases = (
+				B9371734B6BD0677B0A28E47 /* [CP] Check Pods Manifest.lock */,
 				1744F5121F676849007B4681 /* Sources */,
 				1744F5131F676849007B4681 /* Frameworks */,
 				1744F5141F676849007B4681 /* Resources */,
+				866FB96DC485A6939052FB5B /* [CP] Embed Pods Frameworks */,
+				79A3F06C9D3C3BDC0A1F9866 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,6 +441,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		79A3F06C9D3C3BDC0A1F9866 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransactionList/Pods-TransactionList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		866FB96DC485A6939052FB5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransactionList/Pods-TransactionList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9371734B6BD0677B0A28E47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TransactionList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1744F5121F676849007B4681 /* Sources */ = {
@@ -425,6 +647,7 @@
 		};
 		1744F5441F67684A007B4681 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 011159C39A5678A6FED230D5 /* Pods-TransactionList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 32C6F7YM75;
@@ -437,6 +660,7 @@
 		};
 		1744F5451F67684A007B4681 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95B653BDF32043E77691B281 /* Pods-TransactionList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 32C6F7YM75;
@@ -516,6 +740,7 @@
 				1744F5451F67684A007B4681 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1744F5461F67684A007B4681 /* Build configuration list for PBXNativeTarget "TransactionListTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +749,7 @@
 				1744F5481F67684A007B4681 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1744F5491F67684A007B4681 /* Build configuration list for PBXNativeTarget "TransactionListUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +758,7 @@
 				1744F54B1F67684A007B4681 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
