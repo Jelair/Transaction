@@ -20,15 +20,22 @@
 		170DF1851F684A6D006CD47B /* UIView+ZJLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 170DF1841F684A6D006CD47B /* UIView+ZJLExtension.m */; };
 		1744F51B1F676849007B4681 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F51A1F676849007B4681 /* main.m */; };
 		1744F51E1F676849007B4681 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F51D1F676849007B4681 /* AppDelegate.m */; };
-		1744F5211F676849007B4681 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F5201F676849007B4681 /* ViewController.m */; };
 		1744F5241F676849007B4681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1744F5221F676849007B4681 /* Main.storyboard */; };
 		1744F5261F676849007B4681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1744F5251F676849007B4681 /* Assets.xcassets */; };
 		1744F5291F676849007B4681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1744F5271F676849007B4681 /* LaunchScreen.storyboard */; };
 		1744F5341F67684A007B4681 /* TransactionListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F5331F67684A007B4681 /* TransactionListTests.m */; };
 		1744F53F1F67684A007B4681 /* TransactionListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F53E1F67684A007B4681 /* TransactionListUITests.m */; };
+		174AE5E51F6A71F200229612 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 174AE5E41F6A71F200229612 /* LoginViewController.m */; };
+		174AE5E81F6A76A500229612 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 174AE5E71F6A76A500229612 /* BaseView.m */; };
 		176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413EE1F6827FA00AC304B /* ZJLTabBar.m */; };
 		176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413F11F68282900AC304B /* ZJLTabBarController.m */; };
 		176413F51F68287800AC304B /* ZJLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413F41F68287800AC304B /* ZJLNavigationController.m */; };
+		17CB62901F6B7C2C0048B7C7 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB628F1F6B7C2C0048B7C7 /* LoginModel.m */; };
+		17CB62931F6B7C530048B7C7 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB62921F6B7C530048B7C7 /* LoginView.m */; };
+		17CB62961F6B7C730048B7C7 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB62951F6B7C730048B7C7 /* LoginViewModel.m */; };
+		17CB629C1F6B827F0048B7C7 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB629B1F6B827F0048B7C7 /* BaseViewModel.m */; };
+		17CB629F1F6B829E0048B7C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB629E1F6B829E0048B7C7 /* BaseViewController.m */; };
+		17CB62A41F6B9A340048B7C7 /* CMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB62A31F6B9A340048B7C7 /* CMRequest.m */; };
 		9ACBF4D77E1A8FF627EAD2C9 /* libPods-TransactionList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7338682C28A546AFA182DCEE /* libPods-TransactionList.a */; };
 /* End PBXBuildFile section */
 
@@ -67,8 +74,6 @@
 		1744F51A1F676849007B4681 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1744F51C1F676849007B4681 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1744F51D1F676849007B4681 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1744F51F1F676849007B4681 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1744F5201F676849007B4681 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1744F5231F676849007B4681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1744F5251F676849007B4681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1744F5281F676849007B4681 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,12 +84,32 @@
 		1744F53A1F67684A007B4681 /* TransactionListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1744F53E1F67684A007B4681 /* TransactionListUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransactionListUITests.m; sourceTree = "<group>"; };
 		1744F5401F67684A007B4681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174AE5E31F6A71F200229612 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		174AE5E41F6A71F200229612 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		174AE5E61F6A76A500229612 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		174AE5E71F6A76A500229612 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		176413ED1F6827FA00AC304B /* ZJLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLTabBar.h; sourceTree = "<group>"; };
 		176413EE1F6827FA00AC304B /* ZJLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLTabBar.m; sourceTree = "<group>"; };
 		176413F01F68282900AC304B /* ZJLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLTabBarController.h; sourceTree = "<group>"; };
 		176413F11F68282900AC304B /* ZJLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLTabBarController.m; sourceTree = "<group>"; };
 		176413F31F68287800AC304B /* ZJLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLNavigationController.h; sourceTree = "<group>"; };
 		176413F41F68287800AC304B /* ZJLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLNavigationController.m; sourceTree = "<group>"; };
+		17CB628E1F6B7C2C0048B7C7 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		17CB628F1F6B7C2C0048B7C7 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		17CB62911F6B7C530048B7C7 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		17CB62921F6B7C530048B7C7 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		17CB62941F6B7C730048B7C7 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		17CB62951F6B7C730048B7C7 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		17CB62971F6B81570048B7C7 /* BaseViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewProtocol.h; sourceTree = "<group>"; };
+		17CB62981F6B81C10048B7C7 /* BaseViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewControllerProtocol.h; sourceTree = "<group>"; };
+		17CB629A1F6B827F0048B7C7 /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
+		17CB629B1F6B827F0048B7C7 /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
+		17CB629D1F6B829E0048B7C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		17CB629E1F6B829E0048B7C7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		17CB62A11F6B89BF0048B7C7 /* BaseViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModelProtocol.h; sourceTree = "<group>"; };
+		17CB62A21F6B9A340048B7C7 /* CMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRequest.h; sourceTree = "<group>"; };
+		17CB62A31F6B9A340048B7C7 /* CMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRequest.m; sourceTree = "<group>"; };
+		17CB62A51F6BA2770048B7C7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7338682C28A546AFA182DCEE /* libPods-TransactionList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransactionList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B653BDF32043E77691B281 /* Pods-TransactionList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionList/Pods-TransactionList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,15 +157,6 @@
 			path = tabbar;
 			sourceTree = "<group>";
 		};
-		170DF1821F684A34006CD47B /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				170DF1831F684A6D006CD47B /* UIView+ZJLExtension.h */,
-				170DF1841F684A6D006CD47B /* UIView+ZJLExtension.m */,
-			);
-			name = Category;
-			sourceTree = "<group>";
-		};
 		1744F50D1F676849007B4681 = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +185,6 @@
 				1744F5551F678F5E007B4681 /* Resource */,
 				1744F5541F678F53007B4681 /* Class */,
 				1744F5531F678F45007B4681 /* APPDelegate */,
-				1744F51F1F676849007B4681 /* ViewController.h */,
-				1744F5201F676849007B4681 /* ViewController.m */,
 				1744F5221F676849007B4681 /* Main.storyboard */,
 				1744F5251F676849007B4681 /* Assets.xcassets */,
 				1744F5271F676849007B4681 /* LaunchScreen.storyboard */,
@@ -184,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				1744F51A1F676849007B4681 /* main.m */,
+				17CB62A51F6BA2770048B7C7 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -270,7 +285,11 @@
 		1744F55A1F678FD0007B4681 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				170DF1821F684A34006CD47B /* Category */,
+				1744F5631F679050007B4681 /* Public */,
+				1744F5621F679048007B4681 /* Models */,
+				1744F5611F679040007B4681 /* Core */,
+				1744F5601F679035007B4681 /* Categories */,
+				1744F55F1F67902F007B4681 /* Base */,
 				176413EA1F68278B00AC304B /* MainFrame */,
 			);
 			name = General;
@@ -279,6 +298,8 @@
 		1744F55B1F678FD9007B4681 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				17CB62A21F6B9A340048B7C7 /* CMRequest.h */,
+				17CB62A31F6B9A340048B7C7 /* CMRequest.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -293,6 +314,12 @@
 		1744F55D1F678FF5007B4681 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				17DAED841F68CAB9003395EF /* RecordPage */,
+				17DAED831F68CAAF003395EF /* SettingPage */,
+				17DAED821F68CAA3003395EF /* ContractPage */,
+				17DAED811F68CA69003395EF /* MessagePage */,
+				17DAED801F68CA5F003395EF /* MainPage */,
+				17DAED7F1F68CA41003395EF /* LoginPage */,
 			);
 			name = Sections;
 			sourceTree = "<group>";
@@ -300,12 +327,6 @@
 		1744F55E1F679001007B4681 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				1744F5641F679058007B4681 /* Views */,
-				1744F5631F679050007B4681 /* Public */,
-				1744F5621F679048007B4681 /* Models */,
-				1744F5611F679040007B4681 /* Core */,
-				1744F5601F679035007B4681 /* Categories */,
-				1744F55F1F67902F007B4681 /* Base */,
 			);
 			name = Vendors;
 			sourceTree = "<group>";
@@ -313,6 +334,13 @@
 		1744F55F1F67902F007B4681 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				17CB62A01F6B82B50048B7C7 /* Protocol */,
+				174AE5E61F6A76A500229612 /* BaseView.h */,
+				174AE5E71F6A76A500229612 /* BaseView.m */,
+				17CB629A1F6B827F0048B7C7 /* BaseViewModel.h */,
+				17CB629B1F6B827F0048B7C7 /* BaseViewModel.m */,
+				17CB629D1F6B829E0048B7C7 /* BaseViewController.h */,
+				17CB629E1F6B829E0048B7C7 /* BaseViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -320,6 +348,8 @@
 		1744F5601F679035007B4681 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				170DF1831F684A6D006CD47B /* UIView+ZJLExtension.h */,
+				170DF1841F684A6D006CD47B /* UIView+ZJLExtension.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -343,13 +373,6 @@
 			children = (
 			);
 			name = Public;
-			sourceTree = "<group>";
-		};
-		1744F5641F679058007B4681 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		176413EA1F68278B00AC304B /* MainFrame */ = {
@@ -377,6 +400,258 @@
 				176413F11F68282900AC304B /* ZJLTabBarController.m */,
 				176413F31F68287800AC304B /* ZJLNavigationController.h */,
 				176413F41F68287800AC304B /* ZJLNavigationController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17CB62A01F6B82B50048B7C7 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				17CB62971F6B81570048B7C7 /* BaseViewProtocol.h */,
+				17CB62981F6B81C10048B7C7 /* BaseViewControllerProtocol.h */,
+				17CB62A11F6B89BF0048B7C7 /* BaseViewModelProtocol.h */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		17DAED7F1F68CA41003395EF /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				17DAED881F68CAFD003395EF /* Controller */,
+				17DAED871F68CAEC003395EF /* Model */,
+				17DAED861F68CAE3003395EF /* ViewModel */,
+				17DAED851F68CAD9003395EF /* View */,
+			);
+			name = LoginPage;
+			sourceTree = "<group>";
+		};
+		17DAED801F68CA5F003395EF /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				17DAED8C1F68CB58003395EF /* Controller */,
+				17DAED8B1F68CB50003395EF /* Model */,
+				17DAED8A1F68CB47003395EF /* ViewModel */,
+				17DAED891F68CB41003395EF /* View */,
+			);
+			name = MainPage;
+			sourceTree = "<group>";
+		};
+		17DAED811F68CA69003395EF /* MessagePage */ = {
+			isa = PBXGroup;
+			children = (
+				17DAED901F68CB7D003395EF /* Controller */,
+				17DAED8F1F68CB77003395EF /* Model */,
+				17DAED8E1F68CB6E003395EF /* ViewModel */,
+				17DAED8D1F68CB67003395EF /* View */,
+			);
+			name = MessagePage;
+			sourceTree = "<group>";
+		};
+		17DAED821F68CAA3003395EF /* ContractPage */ = {
+			isa = PBXGroup;
+			children = (
+				17DAED941F68CC49003395EF /* Controller */,
+				17DAED931F68CC3F003395EF /* Model */,
+				17DAED921F68CC36003395EF /* ViewModel */,
+				17DAED911F68CC2B003395EF /* View */,
+			);
+			name = ContractPage;
+			sourceTree = "<group>";
+		};
+		17DAED831F68CAAF003395EF /* SettingPage */ = {
+			isa = PBXGroup;
+			children = (
+				17DAED981F68CC69003395EF /* Controller */,
+				17DAED971F68CC61003395EF /* Model */,
+				17DAED961F68CC58003395EF /* ViewModel */,
+				17DAED951F68CC52003395EF /* View */,
+			);
+			name = SettingPage;
+			sourceTree = "<group>";
+		};
+		17DAED841F68CAB9003395EF /* RecordPage */ = {
+			isa = PBXGroup;
+			children = (
+				17DAED9C1F68CC87003395EF /* Controller */,
+				17DAED9B1F68CC7E003395EF /* Model */,
+				17DAED9A1F68CC77003395EF /* ViewModel */,
+				17DAED991F68CC71003395EF /* View */,
+			);
+			name = RecordPage;
+			sourceTree = "<group>";
+		};
+		17DAED851F68CAD9003395EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17CB62911F6B7C530048B7C7 /* LoginView.h */,
+				17CB62921F6B7C530048B7C7 /* LoginView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		17DAED861F68CAE3003395EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17CB62941F6B7C730048B7C7 /* LoginViewModel.h */,
+				17CB62951F6B7C730048B7C7 /* LoginViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		17DAED871F68CAEC003395EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17CB628E1F6B7C2C0048B7C7 /* LoginModel.h */,
+				17CB628F1F6B7C2C0048B7C7 /* LoginModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		17DAED881F68CAFD003395EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				174AE5E31F6A71F200229612 /* LoginViewController.h */,
+				174AE5E41F6A71F200229612 /* LoginViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17DAED891F68CB41003395EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		17DAED8A1F68CB47003395EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		17DAED8B1F68CB50003395EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		17DAED8C1F68CB58003395EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17DAED8D1F68CB67003395EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		17DAED8E1F68CB6E003395EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		17DAED8F1F68CB77003395EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		17DAED901F68CB7D003395EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17DAED911F68CC2B003395EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		17DAED921F68CC36003395EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		17DAED931F68CC3F003395EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		17DAED941F68CC49003395EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17DAED951F68CC52003395EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		17DAED961F68CC58003395EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		17DAED971F68CC61003395EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		17DAED981F68CC69003395EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17DAED991F68CC71003395EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		17DAED9A1F68CC77003395EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		17DAED9B1F68CC7E003395EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		17DAED9C1F68CC87003395EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -599,11 +874,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				176413F51F68287800AC304B /* ZJLNavigationController.m in Sources */,
+				17CB629C1F6B827F0048B7C7 /* BaseViewModel.m in Sources */,
 				170DF1851F684A6D006CD47B /* UIView+ZJLExtension.m in Sources */,
-				1744F5211F676849007B4681 /* ViewController.m in Sources */,
+				17CB62961F6B7C730048B7C7 /* LoginViewModel.m in Sources */,
+				17CB62901F6B7C2C0048B7C7 /* LoginModel.m in Sources */,
+				17CB62A41F6B9A340048B7C7 /* CMRequest.m in Sources */,
 				1744F51E1F676849007B4681 /* AppDelegate.m in Sources */,
+				174AE5E81F6A76A500229612 /* BaseView.m in Sources */,
 				176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */,
+				174AE5E51F6A71F200229612 /* LoginViewController.m in Sources */,
+				17CB629F1F6B829E0048B7C7 /* BaseViewController.m in Sources */,
 				176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */,
+				17CB62931F6B7C530048B7C7 /* LoginView.m in Sources */,
 				1744F51B1F676849007B4681 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,6 +1037,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 32C6F7YM75;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TransactionList/PrefixHeader.pch";
 				INFOPLIST_FILE = TransactionList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JinlongZhang.TransactionList;
@@ -768,6 +1051,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 32C6F7YM75;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TransactionList/PrefixHeader.pch";
 				INFOPLIST_FILE = TransactionList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JinlongZhang.TransactionList;
