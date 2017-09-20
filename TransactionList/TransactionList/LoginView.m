@@ -2,7 +2,7 @@
 //  LoginView.m
 //  TransactionList
 //
-//  Created by NowOrNever on 15/09/2017.
+//  Created by NowOrNever on 16/09/2017.
 //  Copyright © 2017 NowOrNever. All rights reserved.
 //
 
@@ -17,5 +17,9 @@
     // Drawing code
 }
 */
++(LoginView *)instanceLoginView{
+    NSArray* nibView =  [[NSBundle mainBundle] loadNibNamed:@"LoginViewxib" owner:nil options:nil];
+    return [nibView objectAtIndex:0];
+}
 
 @end

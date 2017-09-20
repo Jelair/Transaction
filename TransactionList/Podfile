@@ -1,0 +1,9 @@
+platform :ios, '8.0'
+target 'TransactionList' do
+pod 'AFNetworking'
+pod 'Masonry'
+pod 'SDWebImage'
+pod 'FMDB'
+pod 'ReactiveCocoa', '2.5'
+pod 'BlocksKit'
+end

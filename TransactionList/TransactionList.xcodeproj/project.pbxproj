@@ -18,6 +18,13 @@
 		170DF1801F68457E006CD47B /* task.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF1761F68457E006CD47B /* task.png */; };
 		170DF1811F68457E006CD47B /* task_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF1771F68457E006CD47B /* task_h.png */; };
 		170DF1851F684A6D006CD47B /* UIView+ZJLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 170DF1841F684A6D006CD47B /* UIView+ZJLExtension.m */; };
+		17197DF21F7121E100BF00EC /* FMDBHelper+FMDBInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DF11F7121E100BF00EC /* FMDBHelper+FMDBInterface.m */; };
+		17197DF51F712FC500BF00EC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DF41F712FC500BF00EC /* User.m */; };
+		17197DF81F712FEE00BF00EC /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DF71F712FEE00BF00EC /* Task.m */; };
+		17197DFB1F71300100BF00EC /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DFA1F71300000BF00EC /* Message.m */; };
+		17197DFE1F714CB000BF00EC /* TimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DFD1F714CB000BF00EC /* TimeHelper.m */; };
+		17197E011F7168CE00BF00EC /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197E001F7168CE00BF00EC /* DataBase.m */; };
+		17197E041F7170B400BF00EC /* DataBase+DBInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197E031F7170B400BF00EC /* DataBase+DBInterface.m */; };
 		1744F51B1F676849007B4681 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F51A1F676849007B4681 /* main.m */; };
 		1744F51E1F676849007B4681 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1744F51D1F676849007B4681 /* AppDelegate.m */; };
 		1744F5241F676849007B4681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1744F5221F676849007B4681 /* Main.storyboard */; };
@@ -30,12 +37,17 @@
 		176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413EE1F6827FA00AC304B /* ZJLTabBar.m */; };
 		176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413F11F68282900AC304B /* ZJLTabBarController.m */; };
 		176413F51F68287800AC304B /* ZJLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413F41F68287800AC304B /* ZJLNavigationController.m */; };
+		176FD9691F70C3BA0009EC69 /* FMDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 176FD9681F70C3BA0009EC69 /* FMDBHelper.m */; };
+		17AB58331F71EEFD00F39000 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB58311F71EEFD00F39000 /* SigninViewController.m */; };
+		17AB58341F71EEFD00F39000 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AB58321F71EEFD00F39000 /* SigninViewController.xib */; };
 		17CB62901F6B7C2C0048B7C7 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB628F1F6B7C2C0048B7C7 /* LoginModel.m */; };
-		17CB62931F6B7C530048B7C7 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB62921F6B7C530048B7C7 /* LoginView.m */; };
 		17CB62961F6B7C730048B7C7 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB62951F6B7C730048B7C7 /* LoginViewModel.m */; };
 		17CB629C1F6B827F0048B7C7 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB629B1F6B827F0048B7C7 /* BaseViewModel.m */; };
 		17CB629F1F6B829E0048B7C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB629E1F6B829E0048B7C7 /* BaseViewController.m */; };
 		17CB62A41F6B9A340048B7C7 /* CMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB62A31F6B9A340048B7C7 /* CMRequest.m */; };
+		17DE35291F70A2C300AD0940 /* CurrentUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DE35281F70A2C300AD0940 /* CurrentUserInfo.m */; };
+		17EC2BEB1F6CFBF3000C4D8E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EC2BEA1F6CFBF3000C4D8E /* LoginView.m */; };
+		17EC2BF51F6D1000000C4D8E /* LoginViewxib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EC2BF41F6D1000000C4D8E /* LoginViewxib.xib */; };
 		9ACBF4D77E1A8FF627EAD2C9 /* libPods-TransactionList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7338682C28A546AFA182DCEE /* libPods-TransactionList.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +82,20 @@
 		170DF1771F68457E006CD47B /* task_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task_h.png; sourceTree = "<group>"; };
 		170DF1831F684A6D006CD47B /* UIView+ZJLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJLExtension.h"; sourceTree = "<group>"; };
 		170DF1841F684A6D006CD47B /* UIView+ZJLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJLExtension.m"; sourceTree = "<group>"; };
+		17197DF01F7121E100BF00EC /* FMDBHelper+FMDBInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDBHelper+FMDBInterface.h"; sourceTree = "<group>"; };
+		17197DF11F7121E100BF00EC /* FMDBHelper+FMDBInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDBHelper+FMDBInterface.m"; sourceTree = "<group>"; };
+		17197DF31F712FC500BF00EC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		17197DF41F712FC500BF00EC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		17197DF61F712FEE00BF00EC /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		17197DF71F712FEE00BF00EC /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		17197DF91F71300000BF00EC /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		17197DFA1F71300000BF00EC /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		17197DFC1F714CB000BF00EC /* TimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeHelper.h; sourceTree = "<group>"; };
+		17197DFD1F714CB000BF00EC /* TimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeHelper.m; sourceTree = "<group>"; };
+		17197DFF1F7168CE00BF00EC /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
+		17197E001F7168CE00BF00EC /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
+		17197E021F7170B400BF00EC /* DataBase+DBInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataBase+DBInterface.h"; sourceTree = "<group>"; };
+		17197E031F7170B400BF00EC /* DataBase+DBInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataBase+DBInterface.m"; sourceTree = "<group>"; };
 		1744F5161F676849007B4681 /* TransactionList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1744F51A1F676849007B4681 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1744F51C1F676849007B4681 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,10 +120,13 @@
 		176413F11F68282900AC304B /* ZJLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLTabBarController.m; sourceTree = "<group>"; };
 		176413F31F68287800AC304B /* ZJLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLNavigationController.h; sourceTree = "<group>"; };
 		176413F41F68287800AC304B /* ZJLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLNavigationController.m; sourceTree = "<group>"; };
+		176FD9671F70C3BA0009EC69 /* FMDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBHelper.h; sourceTree = "<group>"; };
+		176FD9681F70C3BA0009EC69 /* FMDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBHelper.m; sourceTree = "<group>"; };
+		17AB58301F71EEFD00F39000 /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
+		17AB58311F71EEFD00F39000 /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
+		17AB58321F71EEFD00F39000 /* SigninViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
 		17CB628E1F6B7C2C0048B7C7 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		17CB628F1F6B7C2C0048B7C7 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
-		17CB62911F6B7C530048B7C7 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
-		17CB62921F6B7C530048B7C7 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		17CB62941F6B7C730048B7C7 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		17CB62951F6B7C730048B7C7 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		17CB62971F6B81570048B7C7 /* BaseViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewProtocol.h; sourceTree = "<group>"; };
@@ -110,6 +139,11 @@
 		17CB62A21F6B9A340048B7C7 /* CMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRequest.h; sourceTree = "<group>"; };
 		17CB62A31F6B9A340048B7C7 /* CMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRequest.m; sourceTree = "<group>"; };
 		17CB62A51F6BA2770048B7C7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		17DE35271F70A2C300AD0940 /* CurrentUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserInfo.h; sourceTree = "<group>"; };
+		17DE35281F70A2C300AD0940 /* CurrentUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUserInfo.m; sourceTree = "<group>"; };
+		17EC2BE91F6CFBF3000C4D8E /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		17EC2BEA1F6CFBF3000C4D8E /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		17EC2BF41F6D1000000C4D8E /* LoginViewxib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewxib.xib; sourceTree = "<group>"; };
 		7338682C28A546AFA182DCEE /* libPods-TransactionList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TransactionList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B653BDF32043E77691B281 /* Pods-TransactionList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionList.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionList/Pods-TransactionList.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -300,6 +334,16 @@
 			children = (
 				17CB62A21F6B9A340048B7C7 /* CMRequest.h */,
 				17CB62A31F6B9A340048B7C7 /* CMRequest.m */,
+				176FD9671F70C3BA0009EC69 /* FMDBHelper.h */,
+				176FD9681F70C3BA0009EC69 /* FMDBHelper.m */,
+				17197DF01F7121E100BF00EC /* FMDBHelper+FMDBInterface.h */,
+				17197DF11F7121E100BF00EC /* FMDBHelper+FMDBInterface.m */,
+				17197DFC1F714CB000BF00EC /* TimeHelper.h */,
+				17197DFD1F714CB000BF00EC /* TimeHelper.m */,
+				17197DFF1F7168CE00BF00EC /* DataBase.h */,
+				17197E001F7168CE00BF00EC /* DataBase.m */,
+				17197E021F7170B400BF00EC /* DataBase+DBInterface.h */,
+				17197E031F7170B400BF00EC /* DataBase+DBInterface.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -314,6 +358,7 @@
 		1744F55D1F678FF5007B4681 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				17AB582E1F71EE1D00F39000 /* SigninPage */,
 				17DAED841F68CAB9003395EF /* RecordPage */,
 				17DAED831F68CAAF003395EF /* SettingPage */,
 				17DAED821F68CAA3003395EF /* ContractPage */,
@@ -357,6 +402,8 @@
 		1744F5611F679040007B4681 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				17DE35271F70A2C300AD0940 /* CurrentUserInfo.h */,
+				17DE35281F70A2C300AD0940 /* CurrentUserInfo.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -364,6 +411,12 @@
 		1744F5621F679048007B4681 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				17197DF31F712FC500BF00EC /* User.h */,
+				17197DF41F712FC500BF00EC /* User.m */,
+				17197DF61F712FEE00BF00EC /* Task.h */,
+				17197DF71F712FEE00BF00EC /* Task.m */,
+				17197DF91F71300000BF00EC /* Message.h */,
+				17197DFA1F71300000BF00EC /* Message.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -400,6 +453,24 @@
 				176413F11F68282900AC304B /* ZJLTabBarController.m */,
 				176413F31F68287800AC304B /* ZJLNavigationController.h */,
 				176413F41F68287800AC304B /* ZJLNavigationController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		17AB582E1F71EE1D00F39000 /* SigninPage */ = {
+			isa = PBXGroup;
+			children = (
+				17AB582F1F71EE6000F39000 /* Controller */,
+			);
+			name = SigninPage;
+			sourceTree = "<group>";
+		};
+		17AB582F1F71EE6000F39000 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17AB58301F71EEFD00F39000 /* SigninViewController.h */,
+				17AB58311F71EEFD00F39000 /* SigninViewController.m */,
+				17AB58321F71EEFD00F39000 /* SigninViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -483,8 +554,9 @@
 		17DAED851F68CAD9003395EF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				17CB62911F6B7C530048B7C7 /* LoginView.h */,
-				17CB62921F6B7C530048B7C7 /* LoginView.m */,
+				17EC2BE91F6CFBF3000C4D8E /* LoginView.h */,
+				17EC2BEA1F6CFBF3000C4D8E /* LoginView.m */,
+				17EC2BF41F6D1000000C4D8E /* LoginViewxib.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -791,8 +863,10 @@
 				1744F5241F676849007B4681 /* Main.storyboard in Resources */,
 				170DF1811F68457E006CD47B /* task_h.png in Resources */,
 				170DF17C1F68457E006CD47B /* message.png in Resources */,
+				17AB58341F71EEFD00F39000 /* SigninViewController.xib in Resources */,
 				170DF1781F68457E006CD47B /* add.png in Resources */,
 				170DF17D1F68457E006CD47B /* message_h.png in Resources */,
+				17EC2BF51F6D1000000C4D8E /* LoginViewxib.xib in Resources */,
 				170DF17F1F68457E006CD47B /* setting_h.png in Resources */,
 				170DF17B1F68457E006CD47B /* contract_h.png in Resources */,
 				170DF1791F68457E006CD47B /* add_h.png in Resources */,
@@ -873,19 +947,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17197E011F7168CE00BF00EC /* DataBase.m in Sources */,
+				176FD9691F70C3BA0009EC69 /* FMDBHelper.m in Sources */,
+				17197DF81F712FEE00BF00EC /* Task.m in Sources */,
 				176413F51F68287800AC304B /* ZJLNavigationController.m in Sources */,
+				17197DF51F712FC500BF00EC /* User.m in Sources */,
 				17CB629C1F6B827F0048B7C7 /* BaseViewModel.m in Sources */,
+				17EC2BEB1F6CFBF3000C4D8E /* LoginView.m in Sources */,
 				170DF1851F684A6D006CD47B /* UIView+ZJLExtension.m in Sources */,
+				17AB58331F71EEFD00F39000 /* SigninViewController.m in Sources */,
 				17CB62961F6B7C730048B7C7 /* LoginViewModel.m in Sources */,
 				17CB62901F6B7C2C0048B7C7 /* LoginModel.m in Sources */,
 				17CB62A41F6B9A340048B7C7 /* CMRequest.m in Sources */,
+				17DE35291F70A2C300AD0940 /* CurrentUserInfo.m in Sources */,
+				17197DFE1F714CB000BF00EC /* TimeHelper.m in Sources */,
+				17197DF21F7121E100BF00EC /* FMDBHelper+FMDBInterface.m in Sources */,
 				1744F51E1F676849007B4681 /* AppDelegate.m in Sources */,
 				174AE5E81F6A76A500229612 /* BaseView.m in Sources */,
 				176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */,
 				174AE5E51F6A71F200229612 /* LoginViewController.m in Sources */,
 				17CB629F1F6B829E0048B7C7 /* BaseViewController.m in Sources */,
+				17197DFB1F71300100BF00EC /* Message.m in Sources */,
 				176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */,
-				17CB62931F6B7C530048B7C7 /* LoginView.m in Sources */,
+				17197E041F7170B400BF00EC /* DataBase+DBInterface.m in Sources */,
 				1744F51B1F676849007B4681 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

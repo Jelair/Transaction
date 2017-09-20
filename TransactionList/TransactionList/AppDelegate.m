@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ZJLTabBarController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,8 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    ZJLTabBarController *tabbarVc = [[ZJLTabBarController alloc] init];
-    self.window.rootViewController = tabbarVc;
+    //ZJLTabBarController *tabbarVc = [[ZJLTabBarController alloc] init];
+    LoginViewController *vc = [LoginViewController new];
+    self.window.rootViewController = vc;
     return YES;
 }
 

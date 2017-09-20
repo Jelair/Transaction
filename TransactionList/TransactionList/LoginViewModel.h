@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+typedef void (^RWSignInResponse)(BOOL);
 @interface LoginViewModel : NSObject
 
+
+- (void)signInWithUsername:(NSString *)username password:(NSString *)password complete:(RWSignInResponse)completeBlock;
 @end
