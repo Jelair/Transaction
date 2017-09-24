@@ -32,7 +32,7 @@
     NSLog(@"%s----%@",__FUNCTION__,users);
 }
 
-//删除用户
+//注销用户
 - (BOOL)deleteUser:(User *)user{
     NSString *sql = [NSString stringWithFormat:@"DELETE FROM user WHERE userId = %d", user.userId];
     return [self noResultSetWithSql:sql];
@@ -48,14 +48,40 @@
 #pragma mark -- 联系人操作接口
 //返回一个用户的所有联系人
 - (NSArray *)getAllContractByUser:(User *)user{
-    return nil;
+    NSString *sql = [NSString stringWithFormat:@"SELECT `user`.userId,`user`.userAge,`user`.userGender,`user`.userName,`user`.userTel,`user`.userIcon,userrelations.userRelationsTime FROM user RIGHT JOIN userrelations ON `user`.userId = userrelations.contractId WHERE `userRelations`.userId = %d",user.userId];
+    NSArray *array = [self qureyWithSql:sql];
+    return array;
+}
+
+//根据电话号码搜索联系人
+- (NSArray *)searchContractByTel:(NSString *)tel{
+    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM user WHERE userTel = '%@'",tel];
+    NSArray *users = [self qureyWithSql:sql];
+    return users;
 }
 
 //添加联系人
+/**
+ * @param contractId 要添加的联系人id
+ * @param userId 使用者id
+ */
 - (BOOL)addContract:(int)contractId to:(int)userId{
+    NSString *createTime = [TimeHelper getCurrentTime];
     NSString *sql = @"INSERT INTO userRelations(userId,contractId,userRelationsTime)VALUES(?,?,?)";
-    NSArray *array = @[@(userId),@(contractId),[TimeHelper getCurrentTime]];
-    return [self noResultSetWithSql:sql with:array];
+    NSArray *array1 = @[@(userId),@(contractId),createTime];
+    BOOL addF = [self noResultSetWithSql:sql with:array1];
+       NSArray *array2 = @[@(contractId),@(userId),createTime];
+    BOOL addS = [self noResultSetWithSql:sql with:array2];
+    return addF&&addS;
+}
+
+//删除联系人
+- (BOOL)deleteContract:(int)contractId from:(int)userId{
+    NSString *sql1 = [NSString stringWithFormat:@"DELETE FROM userRelations WHERE userId = %d AND contractId = %d",contractId,userId];
+    NSString *sql2 = [NSString stringWithFormat:@"DELETE FROM userRelations WHERE userId = %d AND contractId = %d",userId,contractId];
+    BOOL delF = [self noResultSetWithSql:sql1];
+    BOOL delS = [self noResultSetWithSql:sql2];
+    return delF&&delS;
 }
 
 #pragma mark -- 任务操作接口

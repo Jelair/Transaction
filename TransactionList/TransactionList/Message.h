@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Message : NSObject
-
+@property (nonatomic, assign) int messageId;
+@property (nonatomic, assign) int messageType;
+@property (nonatomic, strong) NSString *messageContent;
+@property (nonatomic, strong) NSString *messageSendTime;
+@property (nonatomic, assign) int messageIsRead;
+@property (nonatomic, assign) int messageSenderId;
 @end

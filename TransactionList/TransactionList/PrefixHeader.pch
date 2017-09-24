@@ -16,6 +16,7 @@
 #import "CMRequest.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <Masonry.h>
 
 #endif
 #endif /* PrefixHeader_pch */

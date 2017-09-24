@@ -10,4 +10,13 @@
 
 @interface Task : NSObject
 
+@property (nonatomic, assign) int taskId;
+@property (nonatomic, strong) NSString *taskStartTime;
+@property (nonatomic, strong) NSString *taskCreateTime;
+@property (nonatomic, strong) NSString *taskContent;
+@property (nonatomic, strong) NSString *taskPlace;
+@property (nonatomic, strong) NSString *taskOperator;
+@property (nonatomic, strong) NSString *taskObject;
+@property (nonatomic, assign) int taskIsFinish;
+
 @end

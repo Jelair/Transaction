@@ -9,6 +9,12 @@
 #import "ZJLTabBarController.h"
 #import "ZJLNavigationController.h"
 
+#import "RecordViewController.h"
+#import "MainViewController.h"
+#import "MessageViewController.h"
+#import "ContractViewController.h"
+#import "SettingViewController.h"
+
 #import "ZJLTabBar.h"
 
 @interface ZJLTabBarController ()<ZJLTabBarDelegate>
@@ -42,22 +48,22 @@
 }
 
 - (void)setUpAllChildVc{
-    UIViewController *task = [[UIViewController alloc] init];
+    MainViewController *task = [[MainViewController alloc] init];
     [self setUpOneChildVcWithVc:task image:@"task" selectImage:@"task_h" title:@"今日任务"];
     
-    UIViewController *message = [[UIViewController alloc] init];
+    MessageViewController *message = [[MessageViewController alloc] init];
     [self setUpOneChildVcWithVc:message image:@"message" selectImage:@"message_h" title:@"消息"];
     
-    UIViewController *contract = [[UIViewController alloc] init];
+    ContractViewController *contract = [[ContractViewController alloc] init];
     [self setUpOneChildVcWithVc:contract image:@"contract" selectImage:@"contract_h" title:@"联系人"];
     
-    UIViewController *setting = [[UIViewController alloc] init];
+    SettingViewController *setting = [[SettingViewController alloc] init];
     [self setUpOneChildVcWithVc:setting image:@"setting" selectImage:@"setting_h" title:@"设置"];
 }
 
 - (void)setUpOneChildVcWithVc:(UIViewController *)vc image:(NSString *)image selectImage:(NSString *)selectImage title:(NSString *)title{
     ZJLNavigationController *nav = [[ZJLNavigationController alloc] initWithRootViewController:vc];
-    vc.view.backgroundColor = [UIColor lightGrayColor];
+    //vc.view.backgroundColor = [UIColor lightGrayColor];
     UIImage *mImage = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.image = mImage;
     UIImage *mSelectImage = [[UIImage imageNamed:selectImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -70,6 +76,10 @@
 #pragma mark -- mDelegate
 - (void)tabbarRecordButtonClick:(ZJLTabBar *)tabbar{
     NSLog(@"click!");
+    RecordViewController *vc = [[RecordViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
