@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170C18DB1F78E7940037CA43 /* taskContent.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18D41F78E7940037CA43 /* taskContent.png */; };
+		170C18DC1F78E7940037CA43 /* taskPlace.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18D51F78E7940037CA43 /* taskPlace.png */; };
+		170C18DD1F78E7940037CA43 /* startTime.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18D61F78E7940037CA43 /* startTime.png */; };
+		170C18DF1F78E7940037CA43 /* operator.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18D81F78E7940037CA43 /* operator.png */; };
+		170C18E01F78E7940037CA43 /* taskObject.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18D91F78E7940037CA43 /* taskObject.png */; };
+		170C18E11F78E7940037CA43 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18DA1F78E7940037CA43 /* back.png */; };
+		170C18E41F78F1B20037CA43 /* MyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 170C18E31F78F1B20037CA43 /* MyLabel.m */; };
+		170C18E71F78FD3C0037CA43 /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 170C18E61F78FD3C0037CA43 /* MyTextField.m */; };
+		170C18EA1F79010E0037CA43 /* recording.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18E81F79010E0037CA43 /* recording.png */; };
+		170C18EB1F79010E0037CA43 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18E91F79010E0037CA43 /* record.png */; };
+		170C18F11F7912FA0037CA43 /* sure.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18F01F7912FA0037CA43 /* sure.png */; };
 		170DF1781F68457E006CD47B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF16E1F68457E006CD47B /* add.png */; };
 		170DF17A1F68457E006CD47B /* contract.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF1701F68457E006CD47B /* contract.png */; };
 		170DF17B1F68457E006CD47B /* contract_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF1711F68457E006CD47B /* contract_h.png */; };
@@ -56,6 +67,8 @@
 		17A728981F776DF80035465B /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A728971F776DF80035465B /* BaseListViewController.m */; };
 		17AB58331F71EEFD00F39000 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB58311F71EEFD00F39000 /* SigninViewController.m */; };
 		17AB58341F71EEFD00F39000 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AB58321F71EEFD00F39000 /* SigninViewController.xib */; };
+		17C05CEF1F789F6100E52609 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C05CED1F789F6100E52609 /* Fabric.framework */; };
+		17C05CF01F789F6100E52609 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C05CEE1F789F6100E52609 /* Crashlytics.framework */; };
 		17CB62901F6B7C2C0048B7C7 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB628F1F6B7C2C0048B7C7 /* LoginModel.m */; };
 		17CB62961F6B7C730048B7C7 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB62951F6B7C730048B7C7 /* LoginViewModel.m */; };
 		17CB629C1F6B827F0048B7C7 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB629B1F6B827F0048B7C7 /* BaseViewModel.m */; };
@@ -86,6 +99,19 @@
 
 /* Begin PBXFileReference section */
 		011159C39A5678A6FED230D5 /* Pods-TransactionList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionList/Pods-TransactionList.debug.xcconfig"; sourceTree = "<group>"; };
+		170C18D41F78E7940037CA43 /* taskContent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taskContent.png; sourceTree = "<group>"; };
+		170C18D51F78E7940037CA43 /* taskPlace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taskPlace.png; sourceTree = "<group>"; };
+		170C18D61F78E7940037CA43 /* startTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startTime.png; sourceTree = "<group>"; };
+		170C18D81F78E7940037CA43 /* operator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = operator.png; sourceTree = "<group>"; };
+		170C18D91F78E7940037CA43 /* taskObject.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taskObject.png; sourceTree = "<group>"; };
+		170C18DA1F78E7940037CA43 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		170C18E21F78F1B20037CA43 /* MyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLabel.h; sourceTree = "<group>"; };
+		170C18E31F78F1B20037CA43 /* MyLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLabel.m; sourceTree = "<group>"; };
+		170C18E51F78FD3C0037CA43 /* MyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextField.h; sourceTree = "<group>"; };
+		170C18E61F78FD3C0037CA43 /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
+		170C18E81F79010E0037CA43 /* recording.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recording.png; sourceTree = "<group>"; };
+		170C18E91F79010E0037CA43 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
+		170C18F01F7912FA0037CA43 /* sure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sure.png; sourceTree = "<group>"; };
 		170DF16E1F68457E006CD47B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		170DF1701F68457E006CD47B /* contract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contract.png; sourceTree = "<group>"; };
 		170DF1711F68457E006CD47B /* contract_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contract_h.png; sourceTree = "<group>"; };
@@ -167,6 +193,8 @@
 		17AB58301F71EEFD00F39000 /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
 		17AB58311F71EEFD00F39000 /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
 		17AB58321F71EEFD00F39000 /* SigninViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
+		17C05CED1F789F6100E52609 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		17C05CEE1F789F6100E52609 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		17CB628E1F6B7C2C0048B7C7 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		17CB628F1F6B7C2C0048B7C7 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		17CB62941F6B7C730048B7C7 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
@@ -196,6 +224,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ACBF4D77E1A8FF627EAD2C9 /* libPods-TransactionList.a in Frameworks */,
+				17C05CF01F789F6100E52609 /* Crashlytics.framework in Frameworks */,
+				17C05CEF1F789F6100E52609 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +246,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		170C18D31F78E7730037CA43 /* record */ = {
+			isa = PBXGroup;
+			children = (
+				170C18F01F7912FA0037CA43 /* sure.png */,
+				170C18E81F79010E0037CA43 /* recording.png */,
+				170C18E91F79010E0037CA43 /* record.png */,
+				170C18D41F78E7940037CA43 /* taskContent.png */,
+				170C18D51F78E7940037CA43 /* taskPlace.png */,
+				170C18D61F78E7940037CA43 /* startTime.png */,
+				170C18D81F78E7940037CA43 /* operator.png */,
+				170C18D91F78E7940037CA43 /* taskObject.png */,
+				170C18DA1F78E7940037CA43 /* back.png */,
+			);
+			name = record;
+			sourceTree = "<group>";
+		};
 		170DF16D1F68457E006CD47B /* tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +288,8 @@
 		1744F50D1F676849007B4681 = {
 			isa = PBXGroup;
 			children = (
+				17C05CED1F789F6100E52609 /* Fabric.framework */,
+				17C05CEE1F789F6100E52609 /* Crashlytics.framework */,
 				1744F5181F676849007B4681 /* TransactionList */,
 				1744F5321F67684A007B4681 /* TransactionListTests */,
 				1744F53D1F67684A007B4681 /* TransactionListUITests */,
@@ -345,6 +393,7 @@
 		1744F5571F678F9B007B4681 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				170C18D31F78E7730037CA43 /* record */,
 				170DF16D1F68457E006CD47B /* tabbar */,
 			);
 			name = Images;
@@ -769,6 +818,10 @@
 		17DAED991F68CC71003395EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				170C18E21F78F1B20037CA43 /* MyLabel.h */,
+				170C18E31F78F1B20037CA43 /* MyLabel.m */,
+				170C18E51F78FD3C0037CA43 /* MyTextField.h */,
+				170C18E61F78FD3C0037CA43 /* MyTextField.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -826,6 +879,7 @@
 				1744F5141F676849007B4681 /* Resources */,
 				866FB96DC485A6939052FB5B /* [CP] Embed Pods Frameworks */,
 				79A3F06C9D3C3BDC0A1F9866 /* [CP] Copy Pods Resources */,
+				17C05CEC1F789E7C00E52609 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -929,19 +983,28 @@
 				1744F5261F676849007B4681 /* Assets.xcassets in Resources */,
 				170DF1801F68457E006CD47B /* task.png in Resources */,
 				1744F5241F676849007B4681 /* Main.storyboard in Resources */,
+				170C18DC1F78E7940037CA43 /* taskPlace.png in Resources */,
 				170DF1811F68457E006CD47B /* task_h.png in Resources */,
+				170C18DB1F78E7940037CA43 /* taskContent.png in Resources */,
 				170DF17C1F68457E006CD47B /* message.png in Resources */,
+				170C18DD1F78E7940037CA43 /* startTime.png in Resources */,
 				171B16611F78169700E4E5BB /* person.png in Resources */,
+				170C18EB1F79010E0037CA43 /* record.png in Resources */,
 				17AB58341F71EEFD00F39000 /* SigninViewController.xib in Resources */,
+				170C18DF1F78E7940037CA43 /* operator.png in Resources */,
+				170C18EA1F79010E0037CA43 /* recording.png in Resources */,
 				170DF1781F68457E006CD47B /* add.png in Resources */,
 				171B165F1F7813F500E4E5BB /* tel.png in Resources */,
 				170DF17D1F68457E006CD47B /* message_h.png in Resources */,
 				17EC2BF51F6D1000000C4D8E /* LoginViewxib.xib in Resources */,
 				171B165C1F78131300E4E5BB /* age.png in Resources */,
 				170DF17F1F68457E006CD47B /* setting_h.png in Resources */,
+				170C18E01F78E7940037CA43 /* taskObject.png in Resources */,
 				170DF17B1F68457E006CD47B /* contract_h.png in Resources */,
 				171B16561F78022100E4E5BB /* msg.png in Resources */,
+				170C18F11F7912FA0037CA43 /* sure.png in Resources */,
 				171B165D1F78131300E4E5BB /* gender.png in Resources */,
+				170C18E11F78E7940037CA43 /* back.png in Resources */,
 				170DF17E1F68457E006CD47B /* setting.png in Resources */,
 				170DF17A1F68457E006CD47B /* contract.png in Resources */,
 				171B16541F78022100E4E5BB /* add_h.png in Resources */,
@@ -966,6 +1029,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		17C05CEC1F789E7C00E52609 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 39d02ef0017a9eac7359afb07f6d2580ec92b5c6 0687e64cf8807ed6114b639f7a4cf08738caf76de0cfed8687631e9507ffa5be";
+		};
 		79A3F06C9D3C3BDC0A1F9866 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1044,6 +1120,7 @@
 				174AE5E81F6A76A500229612 /* BaseView.m in Sources */,
 				17A7288F1F7767410035465B /* ContractViewController.m in Sources */,
 				1797C8991F77CC2D00C21D10 /* ContractModel.m in Sources */,
+				170C18E71F78FD3C0037CA43 /* MyTextField.m in Sources */,
 				176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */,
 				1797C89C1F77CC4E00C21D10 /* ContractViewModel.m in Sources */,
 				17A728951F77677A0035465B /* MessageViewController.m in Sources */,
@@ -1051,6 +1128,7 @@
 				174AE5E51F6A71F200229612 /* LoginViewController.m in Sources */,
 				17CB629F1F6B829E0048B7C7 /* BaseViewController.m in Sources */,
 				17197DFB1F71300100BF00EC /* Message.m in Sources */,
+				170C18E41F78F1B20037CA43 /* MyLabel.m in Sources */,
 				176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */,
 				17197E041F7170B400BF00EC /* DataBase+DBInterface.m in Sources */,
 				1744F51B1F676849007B4681 /* main.m in Sources */,
@@ -1205,6 +1283,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 32C6F7YM75;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TransactionList/PrefixHeader.pch";
 				INFOPLIST_FILE = TransactionList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1219,6 +1301,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 32C6F7YM75;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TransactionList/PrefixHeader.pch";
 				INFOPLIST_FILE = TransactionList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

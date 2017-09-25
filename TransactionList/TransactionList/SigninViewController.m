@@ -50,13 +50,17 @@
     
     switch (_flag) {
         case 0:
-            if ([self checkUserAccount:textStr]) {
-                self.user.userAccount = textStr;
-                _flag++;
-                self.mTextField.text = @"";
-                self.signInFailureText.text = @"请输入密码";
+            if (textStr.length > 0) {
+                if ([self checkUserAccount:textStr]) {
+                    self.user.userAccount = textStr;
+                    _flag++;
+                    self.mTextField.text = @"";
+                    self.signInFailureText.text = @"请输入密码";
+                }else{
+                    self.signInFailureText.text = @"登录名重复，请重新输入";
+                }
             }else{
-                self.signInFailureText.text = @"登录名重复，请重新输入";
+                self.signInFailureText.text = @"登录名不能为空，请输入";
             }
             break;
         case 1:

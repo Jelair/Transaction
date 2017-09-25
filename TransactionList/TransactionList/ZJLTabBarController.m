@@ -75,7 +75,6 @@
 
 #pragma mark -- mDelegate
 - (void)tabbarRecordButtonClick:(ZJLTabBar *)tabbar{
-    NSLog(@"click!");
     RecordViewController *vc = [[RecordViewController alloc] init];
     [self presentViewController:vc animated:YES completion:^{
         
