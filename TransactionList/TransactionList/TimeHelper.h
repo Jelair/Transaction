@@ -14,4 +14,6 @@
 
 + (NSString *)getCurrentTime;
 
++ (NSDate *)stringToDateWith:(NSString *)string;
+
 @end

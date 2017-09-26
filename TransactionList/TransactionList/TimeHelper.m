@@ -38,7 +38,7 @@
 }
 
 // NSString -> NSDate
-- (NSDate *)stringToDateWith:(NSString *)string{
++ (NSDate *)stringToDateWith:(NSString *)string{
     NSString *timeString = string;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";

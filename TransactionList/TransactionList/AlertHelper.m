@@ -27,8 +27,6 @@
 - (void)alertWithTitle:(NSString *)title message:(NSString *)message viewController:(UIViewController *)vc{
      _alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     _mdelegate = vc;
-    
-    
 }
 
 - (void)setCancelBtnWithTitle:(NSString *)title handlerBlock:(void(^)())block{
@@ -51,6 +49,14 @@
             dblcok();
         }
     }]];
+}
+
+- (void)addTextFieldWithBlock:(void(^)(NSString* textString))handlerBlock{
+    [_alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        if (handlerBlock) {
+            handlerBlock(textField.text);
+        }
+    }];
 }
 
 - (void)show{

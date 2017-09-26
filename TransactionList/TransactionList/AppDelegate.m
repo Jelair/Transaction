@@ -11,8 +11,9 @@
 #import "LoginViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
@@ -25,8 +26,31 @@
     [Fabric with:@[[Crashlytics class]]];
     LoginViewController *vc = [LoginViewController new];
     self.window.rootViewController = vc;
+    [self applyNotificationProcess];
     return YES;
 }
+
+// 如果在应用内展示通知 （如果不想在应用内展示，可以不实现这个方法）
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+    
+    // 展示
+    completionHandler(UNNotificationPresentationOptionAlert|UNNotificationPresentationOptionSound);
+    
+    //    // 不展示
+    //    completionHandler(UNNotificationPresentationOptionNone);
+}
+
+- (void)applyNotificationProcess{
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+            center.delegate = self;
+        }
+
+    }];
+}
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

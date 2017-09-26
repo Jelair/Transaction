@@ -1,37 +1,34 @@
 //
-//  MainViewController.m
+//  TaskHistoryViewController.m
 //  TransactionList
 //
-//  Created by NowOrNever on 24/09/2017.
+//  Created by NowOrNever on 26/09/2017.
 //  Copyright © 2017 NowOrNever. All rights reserved.
 //
 
-#import "MainViewController.h"
-#import "MainTableViewCell.h"
-#import "MainDetailController.h"
-#import "MainViewModel.h"
 #import "TaskHistoryViewController.h"
+#import "MainViewModel.h"
+#import "TaskHistoryTableViewCell.h"
 
-@interface MainViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface TaskHistoryViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong) MainViewModel *mvm;
 @end
 
-@implementation MainViewController
+@implementation TaskHistoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"任务";
     [self.view addSubview:self.tableView];
     
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"我的任务" style:UIBarButtonItemStylePlain target:self action:@selector(pushViewController)];
-    self.navigationItem.rightBarButtonItem = rightBtn;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [self.mvm getTaskData:^(id taskData) {
+    [self.mvm getAllTaskData:^(id taskData) {
         self.dataSource = [taskData copy];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -39,15 +36,11 @@
     }];
 }
 
-- (void)pushViewController{
-    TaskHistoryViewController *vc = [TaskHistoryViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    MainDetailController *vc = [MainDetailController new];
-    [vc setInfoWithDic:self.dataSource[indexPath.row]];
-    [self.navigationController pushViewController:vc animated:YES];
+    //MainDetailController *vc = [MainDetailController new];
+    //[vc setInfoWithDic:self.dataSource[indexPath.row]];
+    //[self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -58,13 +51,13 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dell"];
+    TaskHistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dell"];
     if (!cell) {
-        cell = [[MainTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"dell"];
+        cell = [[TaskHistoryTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"dell"];
         
     }
     [cell updateDataWithDic:self.dataSource[indexPath.row]];
-
+    
     return cell;
 }
 
@@ -96,3 +89,4 @@
     return _mvm;
 }
 @end
+

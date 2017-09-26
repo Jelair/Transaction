@@ -118,7 +118,7 @@
 
 //获取已做的任务
 - (NSArray *)getDidTaskDataBy:(int)userId{
-    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM task WHERE taskOperator = %d AND taskIsFinish = 1",userId];
+    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM task WHERE taskOperator = %d",userId];
     NSArray *array = [self qureyWithSql:sql];
     return array;
 }

@@ -7,6 +7,8 @@
 //
 
 #import "ContractViewController.h"
+#import "ContractSearchViewController.h"
+#import "ContractDetailViewController.h"
 
 @interface ContractViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -20,6 +22,13 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushViewController)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+}
+
+- (void)pushViewController{
+    ContractSearchViewController *vc = [ContractSearchViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -- dataSource

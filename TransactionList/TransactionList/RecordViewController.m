@@ -10,11 +10,12 @@
 #import "MyLabel.h"
 #import "MyTextField.h"
 #import "RecordViewModel.h"
+#import "WSDatePickerView.h"
 
 @interface RecordViewController ()
 @property(nonatomic,strong) MyTextField *taskContent;
 @property(nonatomic,strong) MyTextField *taskPlace;
-@property(nonatomic,strong) MyTextField *taskTime;
+@property(nonatomic,strong) MyLabel *taskTime;
 @property(nonatomic,strong) RecordViewModel *rvm;
 @end
 
@@ -25,6 +26,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
     [self setupFrame];
+}
+
+- (void)choiceDate{
+    NSLog(@"choickData");
+    WSDatePickerView *picker = [[WSDatePickerView alloc] initWithCompleteBlock:^(NSDate *selectDate) {
+        NSString *date = [selectDate stringWithFormat:@"yyyy-MM-dd HH:mm"];
+        NSMutableString *newDate = [date mutableCopy];
+        [newDate appendString:@":00"];
+        self.taskTime.text = newDate;
+    }];
+    [picker show];
 }
 
 - (void)setupFrame{
@@ -181,7 +193,12 @@
         make.centerY.equalTo(taskTimeIcon);
     }];
     
-    MyTextField *timeF = [MyTextField new];
+    UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(choiceDate)];
+    MyLabel *timeF = [MyLabel new];
+   
+    timeF.userInteractionEnabled = YES;
+    timeF.text = @"请选择日期";
+    [timeF addGestureRecognizer:gr];
     //timeF.placeholder = @"请输入时间";
     [self.view addSubview:timeF];
     [timeF mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -271,14 +288,37 @@
     NSString *content = self.taskContent.text;
     NSString *place = self.taskPlace.text;
     NSString *time = self.taskTime.text;
-    NSLog(@"%@,%@,%@",content,place,time);
-    [self.rvm addTaskWithContent:content place:place time:time completeHandle:^(BOOL isSuccess) {
-        if (isSuccess) {
-            NSLog(@"Success");
-        }else{
-            NSLog(@"Fail");
-        }
-    }];
+    __weak typeof(self) weakSelf = self;
+    if(content.length>0&&place.length>0&&time.length>0){
+        [self.rvm addTaskWithContent:content place:place time:time completeHandle:^(BOOL isSuccess) {
+            
+            AlertHelper *alert = [AlertHelper shareHelper];
+            if (isSuccess) {
+                [alert alertWithTitle:@"添加成功" message:@"记得按时完成啊" viewController:weakSelf];
+                [alert setDefaultBtnWithTitle:@"OK" handlerBlock:^{
+
+                    weakSelf.taskContent.text = @"";
+                    weakSelf.taskTime.text = @"请选择日期";
+                    weakSelf.taskPlace.text = @"";
+                }];
+            }else{
+                [alert alertWithTitle:@"添加失败" message:@"哪里出问题了呢！" viewController:weakSelf];
+                [alert setCancelBtnWithTitle:@"取消" handlerBlock:^{
+                    
+                }];
+            }
+            
+            [alert show];
+        }];
+    }else{
+        AlertHelper *alert = [AlertHelper shareHelper];
+        [alert alertWithTitle:@"提示" message:@"请将信息补充完整！！！" viewController:self];
+        [alert setDefaultBtnWithTitle:@"继续补充" handlerBlock:^{
+            
+        }];
+        [alert show];
+    }
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

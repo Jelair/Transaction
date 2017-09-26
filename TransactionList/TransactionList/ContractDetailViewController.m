@@ -1,96 +1,32 @@
 //
-//  SettingViewController.m
+//  ContractDetailViewController.m
 //  TransactionList
 //
-//  Created by NowOrNever on 24/09/2017.
+//  Created by NowOrNever on 26/09/2017.
 //  Copyright © 2017 NowOrNever. All rights reserved.
 //
 
-#import "SettingViewController.h"
-#import "SettingViewModel.h"
+#import "ContractDetailViewController.h"
 
-@interface SettingViewController ()
-@property (nonatomic,strong) UITextField *tel;
+@interface ContractDetailViewController ()
+@property (nonatomic,strong) UILabel *tel;
 @property (nonatomic,strong) UILabel *genderLabel;
 @property (nonatomic,strong) UILabel *ageLabel;
 @property (nonatomic,strong) UILabel *nameLabel;
 @property (nonatomic,strong) UIButton *chBtn;
-@property (nonatomic,strong) SettingViewModel *svm;
 @end
 
-@implementation SettingViewController
+@implementation ContractDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupFrame];
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"修改密码" style:UIBarButtonItemStylePlain target:self action:@selector(changePassword)];
-    self.navigationItem.rightBarButtonItem = rightItem;
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [self setContent];
-}
-
-- (SettingViewModel *)svm{
-    if (!_svm) {
-        _svm = [SettingViewModel new];
-    }
-    return _svm;
-}
-
-- (void)changePassword{
-    AlertHelper *helper = [AlertHelper shareHelper];
-    [helper alertWithTitle:@"修改密码" message:@"请输入新密码" viewController:self];
-    [helper setCancelBtnWithTitle:@"不改了" handlerBlock:^{
-        
-    }];
-    [helper setDefaultBtnWithTitle:@"确定修改" handlerBlock:^{
-        
-    }];
-    [helper addTextFieldWithBlock:^(NSString *textString) {
-        
-    }];
-    [helper show];
-}
-
-- (void)iconBtn_click{
-    
 }
 
 - (void)logoutBtn_click{
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-}
-
-- (void)telFieldChange{
-    [self.chBtn setHidden:NO];
-}
-
-- (void)changeTel{
-    [self.chBtn setHidden:YES];
-    NSString *newTel = self.tel.text;
-    [self.svm changeTelWith:newTel complete:^(BOOL isSuccess) {
-        AlertHelper *alert = [AlertHelper shareHelper];
-        if (isSuccess) {
-            [alert alertWithTitle:@"提示" message:@"修改成功" viewController:self];
-        }else{
-            [alert alertWithTitle:@"提示" message:@"修改失败" viewController:self];
-        }
-        [alert setDefaultBtnWithTitle:@"确定" handlerBlock:^{
-            
-        }];
-        [alert show];
-    }];
-}
-
-- (void)setContent{
-    NSDictionary *dic = [[CurrentUserInfo defaultUserInfo] getUserInfo];
-    self.nameLabel.text = dic[@"userName"];
-    self.tel.text = dic[@"userTel"];
-    self.genderLabel.text = [dic[@"userGender"] intValue]==0?@"女":@"男";
-    self.ageLabel.text = [NSString stringWithFormat:@"%@",dic[@"userAge"]];
+    
 }
 
 - (void)setupFrame{
@@ -100,7 +36,6 @@
     UIButton *iconBtn = [UIButton new];
     [iconBtn setBackgroundImage:[UIImage imageNamed:@"userIcon"] forState:UIControlStateNormal];
     iconBtn.layer.cornerRadius = 45;
-    [iconBtn addTarget:self action:@selector(iconBtn_click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:iconBtn];
     [iconBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(90, 90));
@@ -237,12 +172,11 @@
     }];
     
     //
-    UITextField *telContent = [UITextField new];
+    UILabel *telContent = [UILabel new];
     telContent.textColor = [UIColor darkGrayColor];
     telContent.font = [UIFont systemFontOfSize:15];
     telContent.text = @"";
     telContent.textAlignment = NSTextAlignmentRight;
-    [telContent addTarget:self action:@selector(telFieldChange) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:telContent];
     [telContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(telIcon);
@@ -262,43 +196,22 @@
         make.right.equalTo(weakSelf.view).with.offset(-10);
     }];
     
-    //修改电话号码
-    UIButton *changeTel = [UIButton buttonWithType:UIButtonTypeCustom];
-    changeTel.layer.cornerRadius = 5;
-    [changeTel setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    changeTel.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    changeTel.layer.borderWidth = 1;
-    [changeTel setTitle:@"修改电话" forState:UIControlStateNormal];
-    changeTel.titleLabel.font = [UIFont systemFontOfSize:15];
-    [changeTel addTarget:self action:@selector(changeTel) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:changeTel];
-    [changeTel setHidden:YES];
-    [changeTel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(@30);
-        make.left.equalTo(weakSelf.view).with.offset(10);
-        make.right.equalTo(weakSelf.view).with.offset(-10);
-        make.top.equalTo(lineView3.mas_bottom).with.offset(50);
-    }];
-    self.chBtn = changeTel;
     
-    //登出
+    //
     UIButton *logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     logoutBtn.layer.cornerRadius = 5;
     [logoutBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     logoutBtn.layer.borderWidth = 1;
     logoutBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     logoutBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [logoutBtn setTitle:@"登出" forState:UIControlStateNormal];
+    [logoutBtn setTitle:@"添加好友" forState:UIControlStateNormal];
     [logoutBtn addTarget:self action:@selector(logoutBtn_click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:logoutBtn];
     [logoutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(@30);
         make.left.equalTo(weakSelf.view).with.offset(10);
         make.right.equalTo(weakSelf.view).with.offset(-10);
-        make.top.equalTo(changeTel.mas_bottom).with.offset(50);
+        make.top.equalTo(lineView3.mas_bottom).with.offset(50);
     }];
-}
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
 }
 @end

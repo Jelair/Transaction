@@ -12,6 +12,8 @@
 
 - (void)getTaskData:(void(^)(id taskData))block;
 
+- (void)getAllTaskData:(void(^)(id taskData))block;
+
 - (void)finishTaskWithTask:(int)taskId complete:(void (^)(BOOL))block;
 
 @end

@@ -29,7 +29,6 @@
 		170DF1801F68457E006CD47B /* task.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF1761F68457E006CD47B /* task.png */; };
 		170DF1811F68457E006CD47B /* task_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF1771F68457E006CD47B /* task_h.png */; };
 		170DF1851F684A6D006CD47B /* UIView+ZJLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 170DF1841F684A6D006CD47B /* UIView+ZJLExtension.m */; };
-		17197DF21F7121E100BF00EC /* FMDBHelper+FMDBInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DF11F7121E100BF00EC /* FMDBHelper+FMDBInterface.m */; };
 		17197DF51F712FC500BF00EC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DF41F712FC500BF00EC /* User.m */; };
 		17197DF81F712FEE00BF00EC /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DF71F712FEE00BF00EC /* Task.m */; };
 		17197DFB1F71300100BF00EC /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 17197DFA1F71300000BF00EC /* Message.m */; };
@@ -55,7 +54,6 @@
 		176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413EE1F6827FA00AC304B /* ZJLTabBar.m */; };
 		176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413F11F68282900AC304B /* ZJLTabBarController.m */; };
 		176413F51F68287800AC304B /* ZJLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176413F41F68287800AC304B /* ZJLNavigationController.m */; };
-		176FD9691F70C3BA0009EC69 /* FMDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 176FD9681F70C3BA0009EC69 /* FMDBHelper.m */; };
 		1797C8991F77CC2D00C21D10 /* ContractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1797C8981F77CC2D00C21D10 /* ContractModel.m */; };
 		1797C89C1F77CC4E00C21D10 /* ContractViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1797C89B1F77CC4E00C21D10 /* ContractViewModel.m */; };
 		1797C89F1F77CC7300C21D10 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1797C89E1F77CC7300C21D10 /* MessageModel.m */; };
@@ -63,6 +61,18 @@
 		179DF2371F7A183900DB8225 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2361F7A183900DB8225 /* MainViewModel.m */; };
 		179DF23A1F7A32DC00DB8225 /* SettingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2391F7A32DC00DB8225 /* SettingViewModel.m */; };
 		179DF23D1F7A3C9600DB8225 /* AlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF23C1F7A3C9600DB8225 /* AlertHelper.m */; };
+		179DF2401F7A5B2200DB8225 /* ContractDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF23F1F7A5B2200DB8225 /* ContractDetailViewController.m */; };
+		179DF2431F7A5E2100DB8225 /* ContractSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2421F7A5E2000DB8225 /* ContractSearchViewController.m */; };
+		179DF2461F7AA56500DB8225 /* NotificationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2451F7AA56500DB8225 /* NotificationHelper.m */; };
+		179DF2491F7AAFCD00DB8225 /* TaskHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2481F7AAFCD00DB8225 /* TaskHistoryViewController.m */; };
+		179DF24C1F7AB85000DB8225 /* TaskHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF24B1F7AB85000DB8225 /* TaskHistoryTableViewCell.m */; };
+		179DF2501F7AC07400DB8225 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = 179DF24D1F7AC07400DB8225 /* done.png */; };
+		179DF2511F7AC07400DB8225 /* todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 179DF24E1F7AC07400DB8225 /* todo.png */; };
+		179DF2521F7AC07400DB8225 /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 179DF24F1F7AC07400DB8225 /* undo.png */; };
+		179DF25A1F7ACD9400DB8225 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2541F7ACD9400DB8225 /* NSDate+Extension.m */; };
+		179DF25B1F7ACD9400DB8225 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2561F7ACD9400DB8225 /* UIView+Extension.m */; };
+		179DF25C1F7ACD9400DB8225 /* WSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2581F7ACD9400DB8225 /* WSDatePickerView.m */; };
+		179DF25D1F7ACD9400DB8225 /* WSDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179DF2591F7ACD9400DB8225 /* WSDatePickerView.xib */; };
 		17A728891F7765310035465B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A728881F7765310035465B /* SettingViewController.m */; };
 		17A7288C1F7767210035465B /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A7288B1F7767210035465B /* RecordViewController.m */; };
 		17A7288F1F7767410035465B /* ContractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A7288E1F7767410035465B /* ContractViewController.m */; };
@@ -134,8 +144,6 @@
 		170DF1771F68457E006CD47B /* task_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = task_h.png; sourceTree = "<group>"; };
 		170DF1831F684A6D006CD47B /* UIView+ZJLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJLExtension.h"; sourceTree = "<group>"; };
 		170DF1841F684A6D006CD47B /* UIView+ZJLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJLExtension.m"; sourceTree = "<group>"; };
-		17197DF01F7121E100BF00EC /* FMDBHelper+FMDBInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDBHelper+FMDBInterface.h"; sourceTree = "<group>"; };
-		17197DF11F7121E100BF00EC /* FMDBHelper+FMDBInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDBHelper+FMDBInterface.m"; sourceTree = "<group>"; };
 		17197DF31F712FC500BF00EC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		17197DF41F712FC500BF00EC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		17197DF61F712FEE00BF00EC /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
@@ -179,8 +187,6 @@
 		176413F11F68282900AC304B /* ZJLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLTabBarController.m; sourceTree = "<group>"; };
 		176413F31F68287800AC304B /* ZJLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLNavigationController.h; sourceTree = "<group>"; };
 		176413F41F68287800AC304B /* ZJLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLNavigationController.m; sourceTree = "<group>"; };
-		176FD9671F70C3BA0009EC69 /* FMDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBHelper.h; sourceTree = "<group>"; };
-		176FD9681F70C3BA0009EC69 /* FMDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBHelper.m; sourceTree = "<group>"; };
 		1797C8971F77CC2D00C21D10 /* ContractModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractModel.h; sourceTree = "<group>"; };
 		1797C8981F77CC2D00C21D10 /* ContractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractModel.m; sourceTree = "<group>"; };
 		1797C89A1F77CC4E00C21D10 /* ContractViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractViewModel.h; sourceTree = "<group>"; };
@@ -195,6 +201,26 @@
 		179DF2391F7A32DC00DB8225 /* SettingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewModel.m; sourceTree = "<group>"; };
 		179DF23B1F7A3C9600DB8225 /* AlertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertHelper.h; sourceTree = "<group>"; };
 		179DF23C1F7A3C9600DB8225 /* AlertHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertHelper.m; sourceTree = "<group>"; };
+		179DF23E1F7A5B2200DB8225 /* ContractDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractDetailViewController.h; sourceTree = "<group>"; };
+		179DF23F1F7A5B2200DB8225 /* ContractDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractDetailViewController.m; sourceTree = "<group>"; };
+		179DF2411F7A5E2000DB8225 /* ContractSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractSearchViewController.h; sourceTree = "<group>"; };
+		179DF2421F7A5E2000DB8225 /* ContractSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractSearchViewController.m; sourceTree = "<group>"; };
+		179DF2441F7AA56500DB8225 /* NotificationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationHelper.h; sourceTree = "<group>"; };
+		179DF2451F7AA56500DB8225 /* NotificationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationHelper.m; sourceTree = "<group>"; };
+		179DF2471F7AAFCD00DB8225 /* TaskHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskHistoryViewController.h; sourceTree = "<group>"; };
+		179DF2481F7AAFCD00DB8225 /* TaskHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskHistoryViewController.m; sourceTree = "<group>"; };
+		179DF24A1F7AB85000DB8225 /* TaskHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskHistoryTableViewCell.h; sourceTree = "<group>"; };
+		179DF24B1F7AB85000DB8225 /* TaskHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskHistoryTableViewCell.m; sourceTree = "<group>"; };
+		179DF24D1F7AC07400DB8225 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
+		179DF24E1F7AC07400DB8225 /* todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todo.png; sourceTree = "<group>"; };
+		179DF24F1F7AC07400DB8225 /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
+		179DF2531F7ACD9400DB8225 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		179DF2541F7ACD9400DB8225 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		179DF2551F7ACD9400DB8225 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		179DF2561F7ACD9400DB8225 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		179DF2571F7ACD9400DB8225 /* WSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDatePickerView.h; sourceTree = "<group>"; };
+		179DF2581F7ACD9400DB8225 /* WSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDatePickerView.m; sourceTree = "<group>"; };
+		179DF2591F7ACD9400DB8225 /* WSDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSDatePickerView.xib; sourceTree = "<group>"; };
 		17A728871F7765310035465B /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		17A728881F7765310035465B /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		17A7288A1F7767210035465B /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
@@ -418,6 +444,9 @@
 		1744F5571F678F9B007B4681 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				179DF24D1F7AC07400DB8225 /* done.png */,
+				179DF24E1F7AC07400DB8225 /* todo.png */,
+				179DF24F1F7AC07400DB8225 /* undo.png */,
 				17DAFA821F79FA7000AE83FE /* finishTask.png */,
 				17DAFA7D1F79E1F600AE83FE /* share.png */,
 				170C18D31F78E7730037CA43 /* record */,
@@ -458,10 +487,6 @@
 			children = (
 				17CB62A21F6B9A340048B7C7 /* CMRequest.h */,
 				17CB62A31F6B9A340048B7C7 /* CMRequest.m */,
-				176FD9671F70C3BA0009EC69 /* FMDBHelper.h */,
-				176FD9681F70C3BA0009EC69 /* FMDBHelper.m */,
-				17197DF01F7121E100BF00EC /* FMDBHelper+FMDBInterface.h */,
-				17197DF11F7121E100BF00EC /* FMDBHelper+FMDBInterface.m */,
 				17197DFC1F714CB000BF00EC /* TimeHelper.h */,
 				17197DFD1F714CB000BF00EC /* TimeHelper.m */,
 				17197DFF1F7168CE00BF00EC /* DataBase.h */,
@@ -470,6 +495,8 @@
 				17197E031F7170B400BF00EC /* DataBase+DBInterface.m */,
 				179DF23B1F7A3C9600DB8225 /* AlertHelper.h */,
 				179DF23C1F7A3C9600DB8225 /* AlertHelper.m */,
+				179DF2441F7AA56500DB8225 /* NotificationHelper.h */,
+				179DF2451F7AA56500DB8225 /* NotificationHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -498,6 +525,13 @@
 		1744F55E1F679001007B4681 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				179DF2531F7ACD9400DB8225 /* NSDate+Extension.h */,
+				179DF2541F7ACD9400DB8225 /* NSDate+Extension.m */,
+				179DF2551F7ACD9400DB8225 /* UIView+Extension.h */,
+				179DF2561F7ACD9400DB8225 /* UIView+Extension.m */,
+				179DF2571F7ACD9400DB8225 /* WSDatePickerView.h */,
+				179DF2581F7ACD9400DB8225 /* WSDatePickerView.m */,
+				179DF2591F7ACD9400DB8225 /* WSDatePickerView.xib */,
 			);
 			name = Vendors;
 			sourceTree = "<group>";
@@ -721,6 +755,8 @@
 			children = (
 				17DAFA7A1F79D51200AE83FE /* MainTableViewCell.h */,
 				17DAFA7B1F79D51200AE83FE /* MainTableViewCell.m */,
+				179DF24A1F7AB85000DB8225 /* TaskHistoryTableViewCell.h */,
+				179DF24B1F7AB85000DB8225 /* TaskHistoryTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -748,6 +784,8 @@
 				17A728911F77675D0035465B /* MainViewController.m */,
 				17DAFA7F1F79E63700AE83FE /* MainDetailController.h */,
 				17DAFA801F79E63700AE83FE /* MainDetailController.m */,
+				179DF2471F7AAFCD00DB8225 /* TaskHistoryViewController.h */,
+				179DF2481F7AAFCD00DB8225 /* TaskHistoryViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -816,6 +854,10 @@
 			children = (
 				17A7288D1F7767410035465B /* ContractViewController.h */,
 				17A7288E1F7767410035465B /* ContractViewController.m */,
+				179DF23E1F7A5B2200DB8225 /* ContractDetailViewController.h */,
+				179DF23F1F7A5B2200DB8225 /* ContractDetailViewController.m */,
+				179DF2411F7A5E2000DB8225 /* ContractSearchViewController.h */,
+				179DF2421F7A5E2000DB8225 /* ContractSearchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1021,13 +1063,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1744F5291F676849007B4681 /* LaunchScreen.storyboard in Resources */,
+				179DF2511F7AC07400DB8225 /* todo.png in Resources */,
 				1744F5261F676849007B4681 /* Assets.xcassets in Resources */,
+				179DF2521F7AC07400DB8225 /* undo.png in Resources */,
 				170DF1801F68457E006CD47B /* task.png in Resources */,
 				1744F5241F676849007B4681 /* Main.storyboard in Resources */,
 				170C18DC1F78E7940037CA43 /* taskPlace.png in Resources */,
 				170DF1811F68457E006CD47B /* task_h.png in Resources */,
 				170C18DB1F78E7940037CA43 /* taskContent.png in Resources */,
 				170DF17C1F68457E006CD47B /* message.png in Resources */,
+				179DF2501F7AC07400DB8225 /* done.png in Resources */,
 				170C18DD1F78E7940037CA43 /* startTime.png in Resources */,
 				171B16611F78169700E4E5BB /* person.png in Resources */,
 				170C18EB1F79010E0037CA43 /* record.png in Resources */,
@@ -1051,6 +1096,7 @@
 				170DF17E1F68457E006CD47B /* setting.png in Resources */,
 				170DF17A1F68457E006CD47B /* contract.png in Resources */,
 				171B16541F78022100E4E5BB /* add_h.png in Resources */,
+				179DF25D1F7ACD9400DB8225 /* WSDatePickerView.xib in Resources */,
 				171B16591F78022100E4E5BB /* userIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1143,9 +1189,12 @@
 				17DAFA861F7A04DD00AE83FE /* RecordModel.m in Sources */,
 				17197E011F7168CE00BF00EC /* DataBase.m in Sources */,
 				17A728981F776DF80035465B /* BaseListViewController.m in Sources */,
-				176FD9691F70C3BA0009EC69 /* FMDBHelper.m in Sources */,
+				179DF24C1F7AB85000DB8225 /* TaskHistoryTableViewCell.m in Sources */,
 				17197DF81F712FEE00BF00EC /* Task.m in Sources */,
+				179DF2401F7A5B2200DB8225 /* ContractDetailViewController.m in Sources */,
 				176413F51F68287800AC304B /* ZJLNavigationController.m in Sources */,
+				179DF2491F7AAFCD00DB8225 /* TaskHistoryViewController.m in Sources */,
+				179DF2461F7AA56500DB8225 /* NotificationHelper.m in Sources */,
 				17197DF51F712FC500BF00EC /* User.m in Sources */,
 				17CB629C1F6B827F0048B7C7 /* BaseViewModel.m in Sources */,
 				17EC2BEB1F6CFBF3000C4D8E /* LoginView.m in Sources */,
@@ -1154,25 +1203,28 @@
 				17CB62961F6B7C730048B7C7 /* LoginViewModel.m in Sources */,
 				17CB62901F6B7C2C0048B7C7 /* LoginModel.m in Sources */,
 				17A728921F77675D0035465B /* MainViewController.m in Sources */,
+				179DF25C1F7ACD9400DB8225 /* WSDatePickerView.m in Sources */,
 				17CB62A41F6B9A340048B7C7 /* CMRequest.m in Sources */,
 				17DE35291F70A2C300AD0940 /* CurrentUserInfo.m in Sources */,
 				17197DFE1F714CB000BF00EC /* TimeHelper.m in Sources */,
 				17A728891F7765310035465B /* SettingViewController.m in Sources */,
-				17197DF21F7121E100BF00EC /* FMDBHelper+FMDBInterface.m in Sources */,
 				179DF23A1F7A32DC00DB8225 /* SettingViewModel.m in Sources */,
 				1744F51E1F676849007B4681 /* AppDelegate.m in Sources */,
 				17A7288C1F7767210035465B /* RecordViewController.m in Sources */,
 				174AE5E81F6A76A500229612 /* BaseView.m in Sources */,
 				17A7288F1F7767410035465B /* ContractViewController.m in Sources */,
+				179DF25A1F7ACD9400DB8225 /* NSDate+Extension.m in Sources */,
 				1797C8991F77CC2D00C21D10 /* ContractModel.m in Sources */,
 				179DF2371F7A183900DB8225 /* MainViewModel.m in Sources */,
 				170C18E71F78FD3C0037CA43 /* MyTextField.m in Sources */,
+				179DF25B1F7ACD9400DB8225 /* UIView+Extension.m in Sources */,
 				176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */,
 				179DF23D1F7A3C9600DB8225 /* AlertHelper.m in Sources */,
 				1797C89C1F77CC4E00C21D10 /* ContractViewModel.m in Sources */,
 				17A728951F77677A0035465B /* MessageViewController.m in Sources */,
 				1797C8A21F77CC9100C21D10 /* MessageViewModel.m in Sources */,
 				174AE5E51F6A71F200229612 /* LoginViewController.m in Sources */,
+				179DF2431F7A5E2100DB8225 /* ContractSearchViewController.m in Sources */,
 				17DAFA811F79E63700AE83FE /* MainDetailController.m in Sources */,
 				17CB629F1F6B829E0048B7C7 /* BaseViewController.m in Sources */,
 				17197DFB1F71300100BF00EC /* Message.m in Sources */,
