@@ -9,7 +9,7 @@
 #import "LoginViewModel.h"
 #import "DataBase+DBInterface.h"
 #import "User.h"
-#import "CurrentUserInfo.h"
+
 
 @implementation LoginViewModel
 - (void)signInWithUsername:(NSString *)username password:(NSString *)password complete:(RWSignInResponse)completeBlock {

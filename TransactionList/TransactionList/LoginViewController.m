@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
-    [self updateUIState];
+    
     self.signInService = [LoginViewModel new];
     [self initUI];
     
@@ -42,6 +42,7 @@
     
     // initially hide the failure message
     self.signInFailureText.hidden = YES;
+    [self updateUIState];
 }
 
 - (void)initUI{
@@ -91,7 +92,7 @@
 // updates the enabled state and style of the text fields based on whether the current username
 // and password combo is valid
 - (void)updateUIState {
-    self.usernameTextField.layer.borderColor = self.usernameIsValid ? [UIColor clearColor].CGColor : [UIColor yellowColor].CGColor;
+    self.usernameTextField.backgroundColor = self.usernameIsValid ? [UIColor clearColor] : [UIColor yellowColor];
     self.passwordTextField.backgroundColor = self.passwordIsValid ? [UIColor clearColor] : [UIColor yellowColor];
     self.signInButton.enabled = self.usernameIsValid && self.passwordIsValid;
 }
@@ -104,6 +105,10 @@
 - (void)passwordTextFieldChanged {
     self.passwordIsValid = [self isValidPassword:self.passwordTextField.text];
     [self updateUIState];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 @end

@@ -9,9 +9,13 @@
 #import "RecordViewController.h"
 #import "MyLabel.h"
 #import "MyTextField.h"
+#import "RecordViewModel.h"
 
 @interface RecordViewController ()
-
+@property(nonatomic,strong) MyTextField *taskContent;
+@property(nonatomic,strong) MyTextField *taskPlace;
+@property(nonatomic,strong) MyTextField *taskTime;
+@property(nonatomic,strong) RecordViewModel *rvm;
 @end
 
 @implementation RecordViewController
@@ -96,6 +100,7 @@
         make.right.equalTo(weakSelf.view).with.offset(-10);
         make.height.mas_equalTo(@30);
     }];
+    self.taskContent = taskContent;
     
     UIView *lineView = [UIView new];
     lineView.backgroundColor = [UIColor lightGrayColor];
@@ -145,6 +150,7 @@
         make.left.equalTo(taskPlaceLabel.mas_right).with.offset(5);
         make.right.equalTo(weakSelf.view).with.offset(-10);
     }];
+    self.taskPlace = placeF;
     
     //任务时间
     UIImageView *taskTimeIcon = [UIImageView new];
@@ -184,6 +190,7 @@
         make.left.equalTo(taskTimeLabel.mas_right).with.offset(5);
         make.right.equalTo(weakSelf.view).with.offset(-10);
     }];
+    self.taskTime = timeF;
     
     //任务执行者
 //    UIImageView *taskOperatorIcon = [UIImageView new];
@@ -261,10 +268,28 @@
 }
 
 - (void)sureBtn_click{
-    [self dismissViewControllerAnimated:YES completion:^{
-        
+    NSString *content = self.taskContent.text;
+    NSString *place = self.taskPlace.text;
+    NSString *time = self.taskTime.text;
+    NSLog(@"%@,%@,%@",content,place,time);
+    [self.rvm addTaskWithContent:content place:place time:time completeHandle:^(BOOL isSuccess) {
+        if (isSuccess) {
+            NSLog(@"Success");
+        }else{
+            NSLog(@"Fail");
+        }
     }];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
+- (RecordViewModel *)rvm{
+    if (!_rvm) {
+        _rvm = [RecordViewModel new];
+    }
+    return _rvm;
+}
 
 @end

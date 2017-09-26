@@ -8,6 +8,8 @@
 
 #import "DataBase+DBInterface.h"
 #import "User.h"
+#import "Task.h"
+#import "Message.h"
 #import "TimeHelper.h"
 
 @implementation DataBase (DBInterface)
@@ -45,6 +47,20 @@
     return [self noResultSetWithSql:sql with:array];
 }
 
+- (BOOL)updateUserWithTel:(NSString *)userTel userId:(int)userId{
+    NSString *sql = [NSString stringWithFormat:@"UPDATE 'user' SET userTel = %@ WHERE userId = %d",userTel,userId];
+    return [self noResultSetWithSql:sql];
+}
+
+- (BOOL)updateUserWithIcon:(NSString *)userIcon userId:(int)userId{
+    NSString *sql = [NSString stringWithFormat:@"UPDATE 'user' SET userIcon = %@ WHERE userId = %d",userIcon,userId];
+    return [self noResultSetWithSql:sql];
+}
+
+- (BOOL)updateUserWithPassword:(NSString *)userPassword userId:(int)userId{
+    NSString *sql = [NSString stringWithFormat:@"UPDATE 'user' SET userPassword = %@ WHERE userId = %d",userPassword,userId];
+    return [self noResultSetWithSql:sql];
+}
 #pragma mark -- 联系人操作接口
 //返回一个用户的所有联系人
 - (NSArray *)getAllContractByUser:(User *)user{
@@ -85,6 +101,34 @@
 }
 
 #pragma mark -- 任务操作接口
+//添加任务
+- (BOOL)addTask:(Task *)task{
+    NSString *sql = @"INSERT INTO task(taskStartTime,taskCreateTime,taskContent,taskPlace,taskOperator,taskIsFinish)VALUES(?,?,?,?,?,?)";
+    NSArray *array = @[task.taskStartTime,task.taskCreateTime,task.taskContent,task.taskPlace,@(task.taskOperator),@(task.taskIsFinish)];
+    BOOL b = [self noResultSetWithSql:sql with:array];
+    return b;
+}
+
+//获取没做的任务
+- (NSArray *)getUndoTaskDataBy:(int)userId{
+    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM task WHERE taskOperator = %d AND taskIsFinish = 0",userId];
+    NSArray *array = [self qureyWithSql:sql];
+    return array;
+}
+
+//获取已做的任务
+- (NSArray *)getDidTaskDataBy:(int)userId{
+    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM task WHERE taskOperator = %d AND taskIsFinish = 1",userId];
+    NSArray *array = [self qureyWithSql:sql];
+    return array;
+}
+
+//更新任务状态
+- (BOOL)finishTask:(int)taskId{
+    NSString *sql = [NSString stringWithFormat:@"UPDATE 'task' SET taskIsFinish = 1 WHERE taskId = %d",taskId];
+    BOOL b = [self noResultSetWithSql:sql];
+    return b;
+}
 
 #pragma mark -- 消息操作接口
 

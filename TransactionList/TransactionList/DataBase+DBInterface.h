@@ -8,6 +8,8 @@
 
 #import "DataBase.h"
 @class User;
+@class Task;
+@class Message;
 @interface DataBase (DBInterface)
 
 #pragma mark -- 用户操作接口
@@ -20,7 +22,9 @@
 //删除用户
 - (BOOL)deleteUser:(User *)user;
 //更新用户,只开放修改用户密码，电话，头像
-- (BOOL)updateUser:(User *)user;
+- (BOOL)updateUserWithTel:(NSString *)userTel userId:(int)userId;
+- (BOOL)updateUserWithIcon:(NSString *)userIcon userId:(int)userId;
+- (BOOL)updateUserWithPassword:(NSString *)userPassword userId:(int)userId;
 
 #pragma mark -- 联系人操作接口
 //返回一个用户的所有联系人
@@ -29,7 +33,10 @@
 - (BOOL)addContract:(int)contractId to:(int)userId;
 
 #pragma mark -- 任务操作接口
-
+- (BOOL)addTask:(Task *)task;
+- (NSArray *)getUndoTaskDataBy:(int)userId;
+- (NSArray *)getDidTaskDataBy:(int)userId;
+- (BOOL)finishTask:(int)taskId;
 #pragma mark -- 消息操作接口
 
 @end

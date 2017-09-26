@@ -17,6 +17,7 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Masonry.h>
-
+#import "CurrentUserInfo.h"
+#import "AlertHelper.h"
 #endif
 #endif /* PrefixHeader_pch */

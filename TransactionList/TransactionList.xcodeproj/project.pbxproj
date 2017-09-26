@@ -18,6 +18,7 @@
 		170C18EA1F79010E0037CA43 /* recording.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18E81F79010E0037CA43 /* recording.png */; };
 		170C18EB1F79010E0037CA43 /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18E91F79010E0037CA43 /* record.png */; };
 		170C18F11F7912FA0037CA43 /* sure.png in Resources */ = {isa = PBXBuildFile; fileRef = 170C18F01F7912FA0037CA43 /* sure.png */; };
+		170C18F41F7919D30037CA43 /* RecordViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 170C18F31F7919D30037CA43 /* RecordViewModel.m */; };
 		170DF1781F68457E006CD47B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF16E1F68457E006CD47B /* add.png */; };
 		170DF17A1F68457E006CD47B /* contract.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF1701F68457E006CD47B /* contract.png */; };
 		170DF17B1F68457E006CD47B /* contract_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 170DF1711F68457E006CD47B /* contract_h.png */; };
@@ -59,6 +60,9 @@
 		1797C89C1F77CC4E00C21D10 /* ContractViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1797C89B1F77CC4E00C21D10 /* ContractViewModel.m */; };
 		1797C89F1F77CC7300C21D10 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1797C89E1F77CC7300C21D10 /* MessageModel.m */; };
 		1797C8A21F77CC9100C21D10 /* MessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1797C8A11F77CC9100C21D10 /* MessageViewModel.m */; };
+		179DF2371F7A183900DB8225 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2361F7A183900DB8225 /* MainViewModel.m */; };
+		179DF23A1F7A32DC00DB8225 /* SettingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF2391F7A32DC00DB8225 /* SettingViewModel.m */; };
+		179DF23D1F7A3C9600DB8225 /* AlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DF23C1F7A3C9600DB8225 /* AlertHelper.m */; };
 		17A728891F7765310035465B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A728881F7765310035465B /* SettingViewController.m */; };
 		17A7288C1F7767210035465B /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A7288B1F7767210035465B /* RecordViewController.m */; };
 		17A7288F1F7767410035465B /* ContractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A7288E1F7767410035465B /* ContractViewController.m */; };
@@ -74,6 +78,11 @@
 		17CB629C1F6B827F0048B7C7 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB629B1F6B827F0048B7C7 /* BaseViewModel.m */; };
 		17CB629F1F6B829E0048B7C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB629E1F6B829E0048B7C7 /* BaseViewController.m */; };
 		17CB62A41F6B9A340048B7C7 /* CMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB62A31F6B9A340048B7C7 /* CMRequest.m */; };
+		17DAFA7C1F79D51200AE83FE /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DAFA7B1F79D51200AE83FE /* MainTableViewCell.m */; };
+		17DAFA7E1F79E1F600AE83FE /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 17DAFA7D1F79E1F600AE83FE /* share.png */; };
+		17DAFA811F79E63700AE83FE /* MainDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DAFA801F79E63700AE83FE /* MainDetailController.m */; };
+		17DAFA831F79FA7000AE83FE /* finishTask.png in Resources */ = {isa = PBXBuildFile; fileRef = 17DAFA821F79FA7000AE83FE /* finishTask.png */; };
+		17DAFA861F7A04DD00AE83FE /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DAFA851F7A04DD00AE83FE /* RecordModel.m */; };
 		17DE35291F70A2C300AD0940 /* CurrentUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DE35281F70A2C300AD0940 /* CurrentUserInfo.m */; };
 		17EC2BEB1F6CFBF3000C4D8E /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EC2BEA1F6CFBF3000C4D8E /* LoginView.m */; };
 		17EC2BF51F6D1000000C4D8E /* LoginViewxib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17EC2BF41F6D1000000C4D8E /* LoginViewxib.xib */; };
@@ -112,6 +121,8 @@
 		170C18E81F79010E0037CA43 /* recording.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recording.png; sourceTree = "<group>"; };
 		170C18E91F79010E0037CA43 /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		170C18F01F7912FA0037CA43 /* sure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sure.png; sourceTree = "<group>"; };
+		170C18F21F7919D30037CA43 /* RecordViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewModel.h; sourceTree = "<group>"; };
+		170C18F31F7919D30037CA43 /* RecordViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewModel.m; sourceTree = "<group>"; };
 		170DF16E1F68457E006CD47B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		170DF1701F68457E006CD47B /* contract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contract.png; sourceTree = "<group>"; };
 		170DF1711F68457E006CD47B /* contract_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contract_h.png; sourceTree = "<group>"; };
@@ -178,6 +189,12 @@
 		1797C89E1F77CC7300C21D10 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		1797C8A01F77CC9100C21D10 /* MessageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewModel.h; sourceTree = "<group>"; };
 		1797C8A11F77CC9100C21D10 /* MessageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewModel.m; sourceTree = "<group>"; };
+		179DF2351F7A183900DB8225 /* MainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
+		179DF2361F7A183900DB8225 /* MainViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
+		179DF2381F7A32DC00DB8225 /* SettingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewModel.h; sourceTree = "<group>"; };
+		179DF2391F7A32DC00DB8225 /* SettingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewModel.m; sourceTree = "<group>"; };
+		179DF23B1F7A3C9600DB8225 /* AlertHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertHelper.h; sourceTree = "<group>"; };
+		179DF23C1F7A3C9600DB8225 /* AlertHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertHelper.m; sourceTree = "<group>"; };
 		17A728871F7765310035465B /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		17A728881F7765310035465B /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		17A7288A1F7767210035465B /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
@@ -209,6 +226,14 @@
 		17CB62A21F6B9A340048B7C7 /* CMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRequest.h; sourceTree = "<group>"; };
 		17CB62A31F6B9A340048B7C7 /* CMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRequest.m; sourceTree = "<group>"; };
 		17CB62A51F6BA2770048B7C7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		17DAFA7A1F79D51200AE83FE /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		17DAFA7B1F79D51200AE83FE /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		17DAFA7D1F79E1F600AE83FE /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		17DAFA7F1F79E63700AE83FE /* MainDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainDetailController.h; sourceTree = "<group>"; };
+		17DAFA801F79E63700AE83FE /* MainDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainDetailController.m; sourceTree = "<group>"; };
+		17DAFA821F79FA7000AE83FE /* finishTask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finishTask.png; sourceTree = "<group>"; };
+		17DAFA841F7A04DD00AE83FE /* RecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordModel.h; sourceTree = "<group>"; };
+		17DAFA851F7A04DD00AE83FE /* RecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordModel.m; sourceTree = "<group>"; };
 		17DE35271F70A2C300AD0940 /* CurrentUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUserInfo.h; sourceTree = "<group>"; };
 		17DE35281F70A2C300AD0940 /* CurrentUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUserInfo.m; sourceTree = "<group>"; };
 		17EC2BE91F6CFBF3000C4D8E /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -393,6 +418,8 @@
 		1744F5571F678F9B007B4681 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				17DAFA821F79FA7000AE83FE /* finishTask.png */,
+				17DAFA7D1F79E1F600AE83FE /* share.png */,
 				170C18D31F78E7730037CA43 /* record */,
 				170DF16D1F68457E006CD47B /* tabbar */,
 			);
@@ -441,6 +468,8 @@
 				17197E001F7168CE00BF00EC /* DataBase.m */,
 				17197E021F7170B400BF00EC /* DataBase+DBInterface.h */,
 				17197E031F7170B400BF00EC /* DataBase+DBInterface.m */,
+				179DF23B1F7A3C9600DB8225 /* AlertHelper.h */,
+				179DF23C1F7A3C9600DB8225 /* AlertHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -690,6 +719,8 @@
 		17DAED891F68CB41003395EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				17DAFA7A1F79D51200AE83FE /* MainTableViewCell.h */,
+				17DAFA7B1F79D51200AE83FE /* MainTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -697,6 +728,8 @@
 		17DAED8A1F68CB47003395EF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				179DF2351F7A183900DB8225 /* MainViewModel.h */,
+				179DF2361F7A183900DB8225 /* MainViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -713,6 +746,8 @@
 			children = (
 				17A728901F77675D0035465B /* MainViewController.h */,
 				17A728911F77675D0035465B /* MainViewController.m */,
+				17DAFA7F1F79E63700AE83FE /* MainDetailController.h */,
+				17DAFA801F79E63700AE83FE /* MainDetailController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -795,6 +830,8 @@
 		17DAED961F68CC58003395EF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				179DF2381F7A32DC00DB8225 /* SettingViewModel.h */,
+				179DF2391F7A32DC00DB8225 /* SettingViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -829,6 +866,8 @@
 		17DAED9A1F68CC77003395EF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				170C18F21F7919D30037CA43 /* RecordViewModel.h */,
+				170C18F31F7919D30037CA43 /* RecordViewModel.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -836,6 +875,8 @@
 		17DAED9B1F68CC7E003395EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17DAFA841F7A04DD00AE83FE /* RecordModel.h */,
+				17DAFA851F7A04DD00AE83FE /* RecordModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -998,8 +1039,10 @@
 				170DF17D1F68457E006CD47B /* message_h.png in Resources */,
 				17EC2BF51F6D1000000C4D8E /* LoginViewxib.xib in Resources */,
 				171B165C1F78131300E4E5BB /* age.png in Resources */,
+				17DAFA831F79FA7000AE83FE /* finishTask.png in Resources */,
 				170DF17F1F68457E006CD47B /* setting_h.png in Resources */,
 				170C18E01F78E7940037CA43 /* taskObject.png in Resources */,
+				17DAFA7E1F79E1F600AE83FE /* share.png in Resources */,
 				170DF17B1F68457E006CD47B /* contract_h.png in Resources */,
 				171B16561F78022100E4E5BB /* msg.png in Resources */,
 				170C18F11F7912FA0037CA43 /* sure.png in Resources */,
@@ -1097,6 +1140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17DAFA861F7A04DD00AE83FE /* RecordModel.m in Sources */,
 				17197E011F7168CE00BF00EC /* DataBase.m in Sources */,
 				17A728981F776DF80035465B /* BaseListViewController.m in Sources */,
 				176FD9691F70C3BA0009EC69 /* FMDBHelper.m in Sources */,
@@ -1115,20 +1159,26 @@
 				17197DFE1F714CB000BF00EC /* TimeHelper.m in Sources */,
 				17A728891F7765310035465B /* SettingViewController.m in Sources */,
 				17197DF21F7121E100BF00EC /* FMDBHelper+FMDBInterface.m in Sources */,
+				179DF23A1F7A32DC00DB8225 /* SettingViewModel.m in Sources */,
 				1744F51E1F676849007B4681 /* AppDelegate.m in Sources */,
 				17A7288C1F7767210035465B /* RecordViewController.m in Sources */,
 				174AE5E81F6A76A500229612 /* BaseView.m in Sources */,
 				17A7288F1F7767410035465B /* ContractViewController.m in Sources */,
 				1797C8991F77CC2D00C21D10 /* ContractModel.m in Sources */,
+				179DF2371F7A183900DB8225 /* MainViewModel.m in Sources */,
 				170C18E71F78FD3C0037CA43 /* MyTextField.m in Sources */,
 				176413EF1F6827FA00AC304B /* ZJLTabBar.m in Sources */,
+				179DF23D1F7A3C9600DB8225 /* AlertHelper.m in Sources */,
 				1797C89C1F77CC4E00C21D10 /* ContractViewModel.m in Sources */,
 				17A728951F77677A0035465B /* MessageViewController.m in Sources */,
 				1797C8A21F77CC9100C21D10 /* MessageViewModel.m in Sources */,
 				174AE5E51F6A71F200229612 /* LoginViewController.m in Sources */,
+				17DAFA811F79E63700AE83FE /* MainDetailController.m in Sources */,
 				17CB629F1F6B829E0048B7C7 /* BaseViewController.m in Sources */,
 				17197DFB1F71300100BF00EC /* Message.m in Sources */,
 				170C18E41F78F1B20037CA43 /* MyLabel.m in Sources */,
+				17DAFA7C1F79D51200AE83FE /* MainTableViewCell.m in Sources */,
+				170C18F41F7919D30037CA43 /* RecordViewModel.m in Sources */,
 				176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */,
 				17197E041F7170B400BF00EC /* DataBase+DBInterface.m in Sources */,
 				1744F51B1F676849007B4681 /* main.m in Sources */,

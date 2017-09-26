@@ -72,9 +72,9 @@ static DataBase *dataBase;
                       //用户关系表
                       @"CREATE TABLE 'userRelations' ('userRelationsId' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'userId' INTEGER, 'contractId' INTEGER, 'userRelationsTime' VARCHAR(30))",
                       //任务表
-                      @"CREATE TABLE 'task' ('taskId' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'taskStartTime' VARCHAR(30), 'taskCreateTime' VARCHAR(30), 'taskContent' VARCHAR(50), 'taskPlace' VARCHAR(20), 'taskOperator' VARCHAR(10), 'taskObject' VARCHAR(10), 'taskIsFinish' INTEGER)",
+                      @"CREATE TABLE 'task' ('taskId' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'taskStartTime' VARCHAR(30), 'taskCreateTime' VARCHAR(30), 'taskContent' VARCHAR(50), 'taskPlace' VARCHAR(20), 'taskOperator' INTEGER, 'taskIsFinish' INTEGER)",
                       //用户任务关系表
-                      @"CREATE TABLE 'utRelations' ('utRelationsId' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'userId' INTEGER, 'taskId' INTEGER), 'distributeTime' VARCHAR(30)",
+                      @"CREATE TABLE 'utRelations' ('utRelationsId' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'userId' INTEGER, 'objectId' INTEGER, 'taskId' INTEGER), 'distributeTime' VARCHAR(30)",
                       //消息表
                       @"CREATE TABLE 'message' ('messageId' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'messageType' INTEGER, 'messageContent' VARCHAR(100), 'messageSendTime' VARCHAR(30), 'messageIsRead' INTEGER, 'messageSenderId' INTEGER)",
                       //用户消息关系表

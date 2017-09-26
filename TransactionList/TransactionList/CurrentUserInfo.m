@@ -26,7 +26,7 @@
 
 //登录成功，存储用户信息
 - (BOOL)setUserInfo:(NSDictionary *)user{
-    self.user = user;
+    self.user = [user copy];
     return YES;
 }
 

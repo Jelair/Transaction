@@ -7,9 +7,15 @@
 //
 
 #import "SettingViewController.h"
+#import "SettingViewModel.h"
 
 @interface SettingViewController ()
-
+@property (nonatomic,strong) UITextField *tel;
+@property (nonatomic,strong) UILabel *genderLabel;
+@property (nonatomic,strong) UILabel *ageLabel;
+@property (nonatomic,strong) UILabel *nameLabel;
+@property (nonatomic,strong) UIButton *chBtn;
+@property (nonatomic,strong) SettingViewModel *svm;
 @end
 
 @implementation SettingViewController
@@ -20,6 +26,17 @@
     [self setupFrame];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self setContent];
+}
+
+- (SettingViewModel *)svm{
+    if (!_svm) {
+        _svm = [SettingViewModel new];
+    }
+    return _svm;
+}
+
 - (void)iconBtn_click{
     
 }
@@ -28,6 +45,35 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+}
+
+- (void)telFieldChange{
+    [self.chBtn setHidden:NO];
+}
+
+- (void)changeTel{
+    [self.chBtn setHidden:YES];
+    NSString *newTel = self.tel.text;
+    [self.svm changeTelWith:newTel complete:^(BOOL isSuccess) {
+        AlertHelper *alert = [AlertHelper shareHelper];
+        if (isSuccess) {
+            [alert alertWithTitle:@"提示" message:@"修改成功" viewController:self];
+        }else{
+            [alert alertWithTitle:@"提示" message:@"修改失败" viewController:self];
+        }
+        [alert setDefaultBtnWithTitle:@"确定" handlerBlock:^{
+            
+        }];
+        [alert show];
+    }];
+}
+
+- (void)setContent{
+    NSDictionary *dic = [[CurrentUserInfo defaultUserInfo] getUserInfo];
+    self.nameLabel.text = dic[@"userName"];
+    self.tel.text = dic[@"userTel"];
+    self.genderLabel.text = [dic[@"userGender"] intValue]==0?@"女":@"男";
+    self.ageLabel.text = [NSString stringWithFormat:@"%@",dic[@"userAge"]];
 }
 
 - (void)setupFrame{
@@ -47,7 +93,7 @@
     
     //用户名
     UILabel *iconLabel = [UILabel new];
-    iconLabel.text = @"用户名";
+    iconLabel.text = @"";
     iconLabel.textColor = [UIColor darkGrayColor];
     iconLabel.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:iconLabel];
@@ -55,7 +101,7 @@
         make.centerX.equalTo(iconBtn);
         make.top.equalTo(iconBtn.mas_bottom).with.offset(20);
     }];
-    
+    self.nameLabel = iconLabel;
     
     //性别图标
     UIImageView *genderIcon = [UIImageView new];
@@ -82,8 +128,9 @@
     
     //
     UILabel *genderContent = [UILabel new];
-    genderContent.text = @"男";
+    genderContent.text = @"";
     genderContent.textColor = [UIColor darkGrayColor];
+    genderContent.textAlignment = NSTextAlignmentRight;
     genderContent.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:genderContent];
     [genderContent mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,6 +138,7 @@
         make.centerY.equalTo(genderIcon);
         make.right.equalTo(weakSelf.view).with.offset(-10);
     }];
+    self.genderLabel = genderContent;
     
     UIView *lineView = [UIView new];
     lineView.backgroundColor = [UIColor lightGrayColor];
@@ -128,13 +176,15 @@
     UILabel *ageContent = [UILabel new];
     ageContent.textColor = [UIColor darkGrayColor];
     ageContent.font = [UIFont systemFontOfSize:15];
-    ageContent.text = @"20";
+    ageContent.text = @"";
+    ageContent.textAlignment = NSTextAlignmentRight;
     [self.view addSubview:ageContent];
     [ageContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(ageIcon);
         make.size.mas_equalTo(CGSizeMake(30, 30));
         make.right.equalTo(weakSelf.view).with.offset(-10);
     }];
+    self.ageLabel = ageContent;
     
     //
     UIView *lineView2 = [UIView new];
@@ -170,16 +220,19 @@
     }];
     
     //
-    UILabel *telContent = [UILabel new];
+    UITextField *telContent = [UITextField new];
     telContent.textColor = [UIColor darkGrayColor];
     telContent.font = [UIFont systemFontOfSize:15];
-    telContent.text = @"18311112222";
+    telContent.text = @"";
+    telContent.textAlignment = NSTextAlignmentRight;
+    [telContent addTarget:self action:@selector(telFieldChange) forControlEvents:UIControlEventEditingChanged];
     [self.view addSubview:telContent];
     [telContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(telIcon);
-        make.size.mas_equalTo(CGSizeMake(100, 30));
+        make.size.mas_equalTo(CGSizeMake(120, 30));
         make.right.equalTo(weakSelf.view).with.offset(-10);
     }];
+    self.tel = telContent;
     
     //
     UIView *lineView3 = [UIView new];
@@ -191,6 +244,25 @@
         make.left.equalTo(weakSelf.view).with.offset(10);
         make.right.equalTo(weakSelf.view).with.offset(-10);
     }];
+    
+    //修改电话号码
+    UIButton *changeTel = [UIButton buttonWithType:UIButtonTypeCustom];
+    changeTel.layer.cornerRadius = 5;
+    [changeTel setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    changeTel.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    changeTel.layer.borderWidth = 1;
+    [changeTel setTitle:@"修改电话" forState:UIControlStateNormal];
+    changeTel.titleLabel.font = [UIFont systemFontOfSize:15];
+    [changeTel addTarget:self action:@selector(changeTel) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:changeTel];
+    [changeTel setHidden:YES];
+    [changeTel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(@30);
+        make.left.equalTo(weakSelf.view).with.offset(10);
+        make.right.equalTo(weakSelf.view).with.offset(-10);
+        make.top.equalTo(lineView3.mas_bottom).with.offset(50);
+    }];
+    self.chBtn = changeTel;
     
     //登出
     UIButton *logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -206,8 +278,10 @@
         make.height.mas_equalTo(@30);
         make.left.equalTo(weakSelf.view).with.offset(10);
         make.right.equalTo(weakSelf.view).with.offset(-10);
-        make.top.equalTo(lineView3.mas_bottom).with.offset(50);
+        make.top.equalTo(changeTel.mas_bottom).with.offset(50);
     }];
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
 @end

@@ -7,10 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "MainTableViewCell.h"
+#import "MainDetailController.h"
+#import "MainViewModel.h"
 
 @interface MainViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,strong) MainViewModel *mvm;
 @end
 
 @implementation MainViewController
@@ -20,24 +24,37 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
-
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [self.mvm getTaskData:^(id taskData) {
+        self.dataSource = [taskData copy];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MainDetailController *vc = [MainDetailController new];
+    [vc setInfoWithDic:self.dataSource[indexPath.row]];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 #pragma mark -- dataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return self.dataSource.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dell"];
+    MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"dell"];
+        cell = [[MainTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"dell"];
+        
     }
-    cell.textLabel.text = @"任务自定义";
+    [cell updateDataWithDic:self.dataSource[indexPath.row]];
 
     return cell;
 }
@@ -57,7 +74,16 @@
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.tableFooterView = [[UIView alloc] init];
         _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.rowHeight = 70;
     }
     return _tableView;
+}
+
+- (MainViewModel *)mvm{
+    if (!_mvm) {
+        _mvm = [MainViewModel new];
+    }
+    return _mvm;
 }
 @end
