@@ -7,10 +7,12 @@
 //
 
 #import "MessageViewController.h"
+#import "MessageViewModel.h"
 
 @interface MessageViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,strong) MessageViewModel *mvm;
 @end
 
 @implementation MessageViewController
@@ -40,6 +42,13 @@
 }
 
 #pragma mark -- getter
+
+- (MessageViewModel *)mvm{
+    if (!_mvm) {
+        _mvm = [MessageViewModel new];
+    }
+    return _mvm;
+}
 
 - (NSMutableArray *)dataSource{
     if (!_dataSource) {

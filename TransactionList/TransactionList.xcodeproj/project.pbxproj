@@ -79,6 +79,7 @@
 		17A728921F77675D0035465B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A728911F77675D0035465B /* MainViewController.m */; };
 		17A728951F77677A0035465B /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A728941F77677A0035465B /* MessageViewController.m */; };
 		17A728981F776DF80035465B /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A728971F776DF80035465B /* BaseListViewController.m */; };
+		17A8A1371F7B313A009301CC /* ContractDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8A1361F7B313A009301CC /* ContractDetailView.m */; };
 		17AB58331F71EEFD00F39000 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB58311F71EEFD00F39000 /* SigninViewController.m */; };
 		17AB58341F71EEFD00F39000 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AB58321F71EEFD00F39000 /* SigninViewController.xib */; };
 		17C05CEF1F789F6100E52609 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C05CED1F789F6100E52609 /* Fabric.framework */; };
@@ -233,6 +234,8 @@
 		17A728941F77677A0035465B /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		17A728961F776DF80035465B /* BaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListViewController.h; sourceTree = "<group>"; };
 		17A728971F776DF80035465B /* BaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListViewController.m; sourceTree = "<group>"; };
+		17A8A1351F7B313A009301CC /* ContractDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractDetailView.h; sourceTree = "<group>"; };
+		17A8A1361F7B313A009301CC /* ContractDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractDetailView.m; sourceTree = "<group>"; };
 		17AB58301F71EEFD00F39000 /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
 		17AB58311F71EEFD00F39000 /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
 		17AB58321F71EEFD00F39000 /* SigninViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
@@ -827,6 +830,8 @@
 		17DAED911F68CC2B003395EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				17A8A1351F7B313A009301CC /* ContractDetailView.h */,
+				17A8A1361F7B313A009301CC /* ContractDetailView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1231,6 +1236,7 @@
 				170C18E41F78F1B20037CA43 /* MyLabel.m in Sources */,
 				17DAFA7C1F79D51200AE83FE /* MainTableViewCell.m in Sources */,
 				170C18F41F7919D30037CA43 /* RecordViewModel.m in Sources */,
+				17A8A1371F7B313A009301CC /* ContractDetailView.m in Sources */,
 				176413F21F68282900AC304B /* ZJLTabBarController.m in Sources */,
 				17197E041F7170B400BF00EC /* DataBase+DBInterface.m in Sources */,
 				1744F51B1F676849007B4681 /* main.m in Sources */,

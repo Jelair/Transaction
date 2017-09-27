@@ -10,4 +10,6 @@
 
 @interface ContractDetailViewController : UIViewController
 
+- (void)setInfoWithDic:(NSDictionary *)dic;
+
 @end

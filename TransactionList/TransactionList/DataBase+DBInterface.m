@@ -63,8 +63,8 @@
 }
 #pragma mark -- 联系人操作接口
 //返回一个用户的所有联系人
-- (NSArray *)getAllContractByUser:(User *)user{
-    NSString *sql = [NSString stringWithFormat:@"SELECT `user`.userId,`user`.userAge,`user`.userGender,`user`.userName,`user`.userTel,`user`.userIcon,userrelations.userRelationsTime FROM user RIGHT JOIN userrelations ON `user`.userId = userrelations.contractId WHERE `userRelations`.userId = %d",user.userId];
+- (NSArray *)getAllContractByUser:(int)userId{
+    NSString *sql = [NSString stringWithFormat:@"SELECT `user`.userId,`user`.userAge,`user`.userGender,`user`.userName,`user`.userTel,`user`.userIcon,userrelations.userRelationsTime FROM user RIGHT JOIN userrelations ON `user`.userId = userrelations.contractId WHERE `userRelations`.userId = %d",userId];
     NSArray *array = [self qureyWithSql:sql];
     return array;
 }
@@ -131,5 +131,25 @@
 }
 
 #pragma mark -- 消息操作接口
+//添加联系人申请信息
+- (BOOL)applyContractWith:(Message *)msg to:(int)contractId{
+    NSString *sql = @"INSERT INTO message(messageType,messageContent,messageSendTime,messageIsRead,messageSenderId)VALUES(?,?,?,?,?)";
+    NSArray *array = @[@(msg.messageType),msg.messageContent,msg.messageSendTime,@(msg.messageIsRead),@(msg.messageSenderId)];
+    BOOL b1 = [self noResultSetWithSql:sql with:array];
+    
+    NSArray *temp = [self qureyWithSql:[NSString stringWithFormat:@"SELECT * FROM message WHERE messageSenderId = %d AND messageSendTime = '%@'",msg.messageSenderId,msg.messageSendTime]];
+    NSDictionary *dic = nil;
+
+    if (temp.count > 0) {
+        dic = temp[0];
+    }
+    int userId = [dic[@"messageId"] intValue];
+    
+    NSString *sql2 = @"INSERT INTO umRelations(recipientId,messageId)VALUES(?,?)";
+    NSArray *array2 = @[@(contractId),@(userId)];
+    BOOL b2 = [self noResultSetWithSql:sql2 with:array2];
+    return b1&&b2;
+}
+
 
 @end

@@ -10,4 +10,12 @@
 
 @implementation MessageViewModel
 
+- (void)getAllMessageWithBlock:(void(^)(id messageData))block{
+    
+}
+
+- (void)sendMessageToContract:(int)contractId completeBlock:(void(^)(BOOL isSuccess))block{
+    
+}
+
 @end

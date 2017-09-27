@@ -1,59 +1,38 @@
 //
-//  ContractDetailViewController.m
+//  ContractDetailView.m
 //  TransactionList
 //
-//  Created by NowOrNever on 26/09/2017.
+//  Created by NowOrNever on 27/09/2017.
 //  Copyright © 2017 NowOrNever. All rights reserved.
 //
 
-#import "ContractDetailViewController.h"
-#import "ContractViewModel.h"
+#import "ContractDetailView.h"
 
-@interface ContractDetailViewController ()
-@property (nonatomic,strong) UILabel *tel;
-@property (nonatomic,strong) UILabel *genderLabel;
-@property (nonatomic,strong) UILabel *ageLabel;
-@property (nonatomic,strong) UILabel *nameLabel;
-@property (nonatomic,strong) UIButton *chBtn;
-@property (nonatomic,strong) ContractViewModel *cvm;
-@property (nonatomic,assign) int contractId;
-@end
+@implementation ContractDetailView
 
-@implementation ContractDetailViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self setupFrame];
+- (instancetype)init{
+    if (self=[super init]) {
+        [self setupFrame];
+    }
+    return self;
 }
 
-- (void)deleteBtn_click{
-    __weak typeof(self) weakSelf = self;
-    AlertHelper *alert = [AlertHelper shareHelper];
-    [alert alertWithTitle:@"确定删除吗" message:@"删除后对方的列表也同时删除您" viewController:self];
-    [alert setDefaultBtnWithTitle:@"确定" handlerBlock:^{
-        [weakSelf.cvm deleteContractByContractId:self.contractId completeBlock:^(BOOL isSuccess) {
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        }];
-    }];
-    [alert setCancelBtnWithTitle:@"取消" handlerBlock:nil];
-    [alert show];
+- (void)logoutBtn_click{
+    if ([self.delegate respondsToSelector:@selector(didClickAddButton)]) {
+        [self.delegate didClickAddButton];
+    }
 }
 
 - (void)setInfoWithDic:(NSDictionary *)dic{
-    self.contractId = [dic[@"userId"] intValue];
-    self.tel.text = dic[@"userTel"];
-    self.genderLabel.text = [dic[@"userGender"] intValue] == 0 ? @"女" : @"男";
-    self.ageLabel.text = [NSString stringWithFormat:@"%@",dic[@"userAge"]];
-    self.nameLabel.text = dic[@"userName"];
-}
-
-- (ContractViewModel *)cvm{
-    if (!_cvm) {
-        _cvm = [ContractViewModel new];
+    if (dic) {
+        self.hidden = NO;
+        self.tel.text = dic[@"userTel"];
+        self.genderLabel.text = [dic[@"userGender"] intValue]==0?@"女":@"男";
+        self.nameLabel.text = dic[@"userName"];
+        self.ageLabel.text = [NSString stringWithFormat:@"%@",dic[@"userAge"]];
+    }else{
+        self.hidden = YES;
     }
-    return _cvm;
 }
 
 - (void)setupFrame{
@@ -63,11 +42,11 @@
     UIButton *iconBtn = [UIButton new];
     [iconBtn setBackgroundImage:[UIImage imageNamed:@"userIcon"] forState:UIControlStateNormal];
     iconBtn.layer.cornerRadius = 45;
-    [self.view addSubview:iconBtn];
+    [self addSubview:iconBtn];
     [iconBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(90, 90));
-        make.centerX.equalTo(weakSelf.view);
-        make.top.equalTo(weakSelf.view).with.offset(90);
+        make.centerX.equalTo(weakSelf);
+        make.top.equalTo(weakSelf).with.offset(50);
     }];
     
     //用户名
@@ -75,7 +54,7 @@
     iconLabel.text = @"";
     iconLabel.textColor = [UIColor darkGrayColor];
     iconLabel.font = [UIFont systemFontOfSize:15];
-    [self.view addSubview:iconLabel];
+    [self addSubview:iconLabel];
     [iconLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(iconBtn);
         make.top.equalTo(iconBtn.mas_bottom).with.offset(20);
@@ -85,10 +64,10 @@
     //性别图标
     UIImageView *genderIcon = [UIImageView new];
     genderIcon.image = [UIImage imageNamed:@"gender"];
-    [self.view addSubview:genderIcon];
+    [self addSubview:genderIcon];
     [genderIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(20, 20));
-        make.left.equalTo(weakSelf.view).with.offset(10);
+        make.left.equalTo(weakSelf).with.offset(10);
         make.top.equalTo(iconLabel.mas_bottom).with.offset(30);
     }];
     
@@ -97,7 +76,7 @@
     genderLabel.text = @"性别";
     genderLabel.textColor = [UIColor darkGrayColor];
     genderLabel.font = [UIFont systemFontOfSize:15];
-    [self.view addSubview:genderLabel];
+    [self addSubview:genderLabel];
     [genderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(@30);
         make.centerY.equalTo(genderIcon);
@@ -111,31 +90,31 @@
     genderContent.textColor = [UIColor darkGrayColor];
     genderContent.textAlignment = NSTextAlignmentRight;
     genderContent.font = [UIFont systemFontOfSize:15];
-    [self.view addSubview:genderContent];
+    [self addSubview:genderContent];
     [genderContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(30, 30));
         make.centerY.equalTo(genderIcon);
-        make.right.equalTo(weakSelf.view).with.offset(-10);
+        make.right.equalTo(weakSelf).with.offset(-10);
     }];
     self.genderLabel = genderContent;
     
     UIView *lineView = [UIView new];
     lineView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:lineView];
+    [self addSubview:lineView];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(@1);
-        make.left.equalTo(weakSelf.view).with.offset(10);
-        make.right.equalTo(weakSelf.view).with.offset(-10);
+        make.left.equalTo(weakSelf).with.offset(10);
+        make.right.equalTo(weakSelf).with.offset(-10);
         make.top.equalTo(genderIcon.mas_bottom).with.offset(5);
     }];
     
     //年龄
     UIImageView *ageIcon = [UIImageView new];
     ageIcon.image = [UIImage imageNamed:@"age"];
-    [self.view addSubview:ageIcon];
+    [self addSubview:ageIcon];
     [ageIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(20, 20));
-        make.left.equalTo(weakSelf.view).with.offset(10);
+        make.left.equalTo(weakSelf).with.offset(10);
         make.top.equalTo(lineView.mas_bottom).with.offset(10);
     }];
     
@@ -144,7 +123,7 @@
     ageLabel.text = @"年龄";
     ageLabel.font = [UIFont systemFontOfSize:15];
     ageLabel.textColor = [UIColor darkGrayColor];
-    [self.view addSubview:ageLabel];
+    [self addSubview:ageLabel];
     [ageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(ageIcon);
         make.size.mas_equalTo(CGSizeMake(50, 30));
@@ -157,33 +136,33 @@
     ageContent.font = [UIFont systemFontOfSize:15];
     ageContent.text = @"";
     ageContent.textAlignment = NSTextAlignmentRight;
-    [self.view addSubview:ageContent];
+    [self addSubview:ageContent];
     [ageContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(ageIcon);
         make.size.mas_equalTo(CGSizeMake(30, 30));
-        make.right.equalTo(weakSelf.view).with.offset(-10);
+        make.right.equalTo(weakSelf).with.offset(-10);
     }];
     self.ageLabel = ageContent;
     
     //
     UIView *lineView2 = [UIView new];
     lineView2.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:lineView2];
+    [self addSubview:lineView2];
     [lineView2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(ageIcon.mas_bottom).with.offset(5);
         make.height.mas_equalTo(@1);
-        make.left.equalTo(weakSelf.view).with.offset(10);
-        make.right.equalTo(weakSelf.view).with.offset(-10);
+        make.left.equalTo(weakSelf).with.offset(10);
+        make.right.equalTo(weakSelf).with.offset(-10);
     }];
     
     //电话
     UIImageView *telIcon = [UIImageView new];
     telIcon.image = [UIImage imageNamed:@"tel"];
-    [self.view addSubview:telIcon];
+    [self addSubview:telIcon];
     [telIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(lineView2.mas_bottom).with.offset(10);
         make.size.mas_equalTo(CGSizeMake(20, 20));
-        make.left.equalTo(weakSelf.view).with.offset(10);
+        make.left.equalTo(weakSelf).with.offset(10);
     }];
     
     //
@@ -191,7 +170,7 @@
     telLabel.textColor = [UIColor darkGrayColor];
     telLabel.font = [UIFont systemFontOfSize:15];
     telLabel.text = @"电话";
-    [self.view addSubview:telLabel];
+    [self addSubview:telLabel];
     [telLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(telIcon);
         make.size.mas_equalTo(CGSizeMake(50, 30));
@@ -204,23 +183,23 @@
     telContent.font = [UIFont systemFontOfSize:15];
     telContent.text = @"";
     telContent.textAlignment = NSTextAlignmentRight;
-    [self.view addSubview:telContent];
+    [self addSubview:telContent];
     [telContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(telIcon);
         make.size.mas_equalTo(CGSizeMake(120, 30));
-        make.right.equalTo(weakSelf.view).with.offset(-10);
+        make.right.equalTo(weakSelf).with.offset(-10);
     }];
     self.tel = telContent;
     
     //
     UIView *lineView3 = [UIView new];
     lineView3.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:lineView3];
+    [self addSubview:lineView3];
     [lineView3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(telIcon.mas_bottom).with.offset(5);
         make.height.mas_equalTo(@1);
-        make.left.equalTo(weakSelf.view).with.offset(10);
-        make.right.equalTo(weakSelf.view).with.offset(-10);
+        make.left.equalTo(weakSelf).with.offset(10);
+        make.right.equalTo(weakSelf).with.offset(-10);
     }];
     
     
@@ -231,14 +210,17 @@
     logoutBtn.layer.borderWidth = 1;
     logoutBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     logoutBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [logoutBtn setTitle:@"删除" forState:UIControlStateNormal];
-    [logoutBtn addTarget:self action:@selector(deleteBtn_click) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:logoutBtn];
+    [logoutBtn setTitle:@"添加" forState:UIControlStateNormal];
+    [logoutBtn addTarget:self action:@selector(logoutBtn_click) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:logoutBtn];
     [logoutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(@30);
-        make.left.equalTo(weakSelf.view).with.offset(10);
-        make.right.equalTo(weakSelf.view).with.offset(-10);
-        make.top.equalTo(lineView3.mas_bottom).with.offset(50);
+        make.left.equalTo(weakSelf).with.offset(10);
+        make.right.equalTo(weakSelf).with.offset(-10);
+        make.top.equalTo(lineView3.mas_bottom).with.offset(30);
     }];
+    
+    [self setHidden:YES];
 }
+
 @end

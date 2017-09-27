@@ -28,9 +28,13 @@
 
 #pragma mark -- 联系人操作接口
 //返回一个用户的所有联系人
-- (NSArray *)getAllContractByUser:(User *)user;
+- (NSArray *)getAllContractByUser:(int)userId;
 //添加联系人
 - (BOOL)addContract:(int)contractId to:(int)userId;
+//删除联系人
+- (BOOL)deleteContract:(int)contractId from:(int)userId;
+//根据电话号码搜索联系人
+- (NSArray *)searchContractByTel:(NSString *)tel;
 
 #pragma mark -- 任务操作接口
 - (BOOL)addTask:(Task *)task;
@@ -38,5 +42,5 @@
 - (NSArray *)getDidTaskDataBy:(int)userId;
 - (BOOL)finishTask:(int)taskId;
 #pragma mark -- 消息操作接口
-
+- (BOOL)applyContractWith:(Message *)msg to:(int)contractId;
 @end

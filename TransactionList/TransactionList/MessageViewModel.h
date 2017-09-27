@@ -10,4 +10,6 @@
 
 @interface MessageViewModel : NSObject
 
+- (void)getAllMessageWithBlock:(void(^)(id messageData))block;
+
 @end

@@ -11,12 +11,21 @@
 #import "MyTextField.h"
 #import "RecordViewModel.h"
 #import "WSDatePickerView.h"
+#import <Speech/Speech.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface RecordViewController ()
+@interface RecordViewController ()<SFSpeechRecognizerDelegate>
 @property(nonatomic,strong) MyTextField *taskContent;
 @property(nonatomic,strong) MyTextField *taskPlace;
 @property(nonatomic,strong) MyLabel *taskTime;
 @property(nonatomic,strong) RecordViewModel *rvm;
+@property(nonatomic,strong) UILabel *tipTextLabel;
+@property(nonatomic,strong) UIButton *recordButton;
+
+@property(nonatomic,strong) SFSpeechRecognizer *speechRecognizer;
+@property(nonatomic,strong) AVAudioEngine *audioEngine;
+@property(nonatomic,strong) SFSpeechRecognitionTask *recognitionTask;
+@property(nonatomic,strong) SFSpeechAudioBufferRecognitionRequest *recognitionRequest;
 @end
 
 @implementation RecordViewController
@@ -26,6 +35,35 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
     [self setupFrame];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    __weak typeof(self) weakSelf = self;
+    [SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            switch (status) {
+                case SFSpeechRecognizerAuthorizationStatusNotDetermined:
+                    weakSelf.recordButton.enabled = NO;
+                    weakSelf.tipTextLabel.text = @"语音识别未授权";
+                    break;
+                case SFSpeechRecognizerAuthorizationStatusDenied:
+                    weakSelf.recordButton.enabled = NO;
+                    weakSelf.tipTextLabel.text = @"用户未授权使用语音识别";
+                    break;
+                case SFSpeechRecognizerAuthorizationStatusRestricted:
+                    weakSelf.recordButton.enabled = NO;
+                    weakSelf.tipTextLabel.text = @"语音识别在这台设备上受到限制";
+                    break;
+                case SFSpeechRecognizerAuthorizationStatusAuthorized:
+                    weakSelf.recordButton.enabled = YES;
+                    weakSelf.tipTextLabel.text = @"开始录入语音";
+                    break;
+                default:
+                    break;
+            }
+        });
+    }];
 }
 
 - (void)choiceDate{
@@ -54,8 +92,6 @@
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelBtn addTarget:self action:@selector(cancelBtn_click) forControlEvents:UIControlEventTouchUpInside];
     [cancelBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-    //[cancelBtn setTitle:@"返回" forState:UIControlStateNormal];
-    //[cancelBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.view addSubview:cancelBtn];
     [cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(44, 44));
@@ -67,7 +103,6 @@
     titleLabel.text = @"创建任务";
     titleLabel.font = [UIFont systemFontOfSize:16];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    //titleLabel.textColor = [UIColor darkGrayColor];
     [self.view addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(100, 44));
@@ -154,7 +189,6 @@
     }];
     
     MyTextField *placeF = [MyTextField new];
-    //placeF.placeholder = @"请输入地点";
     [self.view addSubview:placeF];
     [placeF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(taskPlaceIcon);
@@ -199,7 +233,6 @@
     timeF.userInteractionEnabled = YES;
     timeF.text = @"请选择日期";
     [timeF addGestureRecognizer:gr];
-    //timeF.placeholder = @"请输入时间";
     [self.view addSubview:timeF];
     [timeF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(taskTimeIcon);
@@ -208,45 +241,6 @@
         make.right.equalTo(weakSelf.view).with.offset(-10);
     }];
     self.taskTime = timeF;
-    
-    //任务执行者
-//    UIImageView *taskOperatorIcon = [UIImageView new];
-//    taskOperatorIcon.image = [UIImage imageNamed:@"operator"];
-//    [self.view addSubview:taskOperatorIcon];
-//    [taskOperatorIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(20, 20));
-//        make.centerX.equalTo(taskContentIcon);
-//        make.top.equalTo(taskTimeIcon.mas_bottom).with.offset(60);
-//    }];
-//    
-//    UIView *lineView3 = [UIView new];
-//    lineView3.backgroundColor = [UIColor lightGrayColor];
-//    [self.view addSubview:lineView3];
-//    [lineView3 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(taskOperatorIcon.mas_bottom).with.offset(5);
-//        make.left.equalTo(weakSelf.view).with.offset(10);
-//        make.right.equalTo(weakSelf.view).with.offset(-10);
-//        make.height.mas_equalTo(@1);
-//    }];
-//    
-//    MyLabel *taskOperatorLabel = [MyLabel new];
-//    taskOperatorLabel.text = @"共享者";
-//    [self.view addSubview:taskOperatorLabel];
-//    [taskOperatorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(60, 30));
-//        make.left.equalTo(taskOperatorIcon.mas_right).with.offset(5);
-//        make.centerY.equalTo(taskOperatorIcon);
-//    }];
-//
-//    MyTextField *operatorF = [MyTextField new];
-//    //operatorF.placeholder = @"请输入共享着";
-//    [self.view addSubview:operatorF];
-//    [operatorF mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerY.equalTo(taskOperatorIcon);
-//        make.height.mas_equalTo(@30);
-//        make.left.equalTo(taskOperatorLabel.mas_right).with.offset(5);
-//        make.right.equalTo(weakSelf.view).with.offset(-10);
-//    }];
     
     UIButton *recordBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     recordBtn.layer.cornerRadius = 30;
@@ -259,6 +253,7 @@
         make.centerX.equalTo(weakSelf.view);
         make.top.equalTo(taskTimeIcon.mas_bottom).with.offset(60);
     }];
+    self.recordButton = recordBtn;
     
     UILabel *tipLabel  = [UILabel new];
     tipLabel.font = [UIFont systemFontOfSize:14];
@@ -271,11 +266,93 @@
         make.top.equalTo(recordBtn.mas_bottom).with.offset(10);
         make.size.mas_equalTo(CGSizeMake(200, 30));
     }];
-    
+    self.tipTextLabel = tipLabel;
 }
 
 - (void)recordBtn_click:(UIButton *)sender{
     sender.selected = !sender.selected;
+    
+    if (self.audioEngine.isRunning) {
+        [self.audioEngine stop];
+        if (_recognitionRequest) {
+            [_recognitionRequest endAudio];
+        }
+        self.recordButton.enabled = NO;
+        self.tipTextLabel.text = @"正在停止";
+    }else{
+        [self startRecording];
+        self.tipTextLabel.text = @"结束";
+    }
+}
+
+- (void)startRecording{
+    if (_recognitionTask) {
+        [_recognitionTask cancel];
+        _recognitionTask = nil;
+    }
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    NSError *error;
+    [audioSession setCategory:AVAudioSessionCategoryRecord error:&error];
+    NSParameterAssert(!error);
+    [audioSession setMode:AVAudioSessionModeMeasurement error:&error];
+    NSParameterAssert(!error);
+    [audioSession setActive:YES withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:&error];
+    NSParameterAssert(!error);
+    
+    _recognitionRequest = [[SFSpeechAudioBufferRecognitionRequest alloc] init];
+    AVAudioInputNode *inputNode = self.audioEngine.inputNode;
+    NSAssert(inputNode, @"录入设备没有准备好");
+    NSAssert(_recognitionRequest, @"请求初始化失败");
+    _recognitionRequest.shouldReportPartialResults = YES;
+    __weak typeof(self) weakSelf = self;
+    _recognitionTask = [self.speechRecognizer recognitionTaskWithRequest:_recognitionRequest resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        BOOL isFinal = NO;
+        if (result) {
+            strongSelf.taskContent.text = result.bestTranscription.formattedString;
+            isFinal = result.isFinal;
+        }
+        if (error || isFinal) {
+            [self.audioEngine stop];
+            [inputNode removeTapOnBus:0];
+            strongSelf.recognitionTask = nil;
+            strongSelf.recognitionRequest = nil;
+            strongSelf.recordButton.enabled = YES;
+            strongSelf.tipTextLabel.text = @"开始";
+        }
+    }];
+    
+    AVAudioFormat *recordingFormat = [inputNode outputFormatForBus:0];
+    [inputNode removeTapOnBus:0];
+    [inputNode installTapOnBus:0 bufferSize:1024 format:recordingFormat block:^(AVAudioPCMBuffer * _Nonnull buffer, AVAudioTime * _Nonnull when) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf.recognitionRequest) {
+            [strongSelf.recognitionRequest appendAudioPCMBuffer:buffer];
+        }
+    }];
+    
+    [self.audioEngine prepare];
+    [self.audioEngine startAndReturnError:&error];
+    NSParameterAssert(!error);
+    self.tipTextLabel.text = @"正在录入";
+}
+
+#pragma mark - lazyload
+- (AVAudioEngine *)audioEngine{
+    if (!_audioEngine) {
+        _audioEngine = [[AVAudioEngine alloc] init];
+    }
+    return _audioEngine;
+}
+
+- (SFSpeechRecognizer *)speechRecognizer{
+    if (!_speechRecognizer) {
+        NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+        _speechRecognizer = [[SFSpeechRecognizer alloc] initWithLocale:local];
+        _speechRecognizer.delegate = self;
+    }
+    return _speechRecognizer;
 }
 
 - (void)cancelBtn_click{
@@ -284,12 +361,23 @@
     }];
 }
 
+#pragma mark - SFSpeechRecognizerDelegate
+- (void)speechRecognizer:(SFSpeechRecognizer *)speechRecognizer availabilityDidChange:(BOOL)available{
+    if (available) {
+        self.recordButton.enabled = YES;
+        self.tipTextLabel.text = @"开始";
+    }else{
+        self.recordButton.enabled = NO;
+        self.tipTextLabel.text = @"语音识别不可用";
+    }
+}
+
 - (void)sureBtn_click{
     NSString *content = self.taskContent.text;
     NSString *place = self.taskPlace.text;
     NSString *time = self.taskTime.text;
     __weak typeof(self) weakSelf = self;
-    if(content.length>0&&place.length>0&&time.length>0){
+    if(content.length>0&&place.length>0&&![time isEqualToString:@"请选择日期"]){
         [self.rvm addTaskWithContent:content place:place time:time completeHandle:^(BOOL isSuccess) {
             
             AlertHelper *alert = [AlertHelper shareHelper];

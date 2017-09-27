@@ -10,4 +10,10 @@
 
 @interface ContractViewModel : NSObject
 
+- (void)getAllContracts:(void(^)(id contractData))block;
+- (void)deleteContractByContractId:(int)contractId completeBlock:(void(^)(BOOL isSuccess))block;
+- (void)searchContractByTel:(NSString *)tel completeBlock:(void(^)(id contractData))block;
+
+- (void)applyContractWith:(int)contractId completeBlock:(void(^)(BOOL isSuccess))block;
+
 @end
