@@ -8,6 +8,7 @@
 
 #import "MessageViewController.h"
 #import "MessageViewModel.h"
+#import "MessageDetailViewController.h"
 
 @interface MessageViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
@@ -22,12 +23,19 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
+}
 
+- (void)viewWillAppear:(BOOL)animated{
+    __weak typeof(self) weakSelf = self;
+    [self.mvm getAllMessageWithBlock:^(id messageData) {
+        weakSelf.dataSource = messageData;
+        [weakSelf.tableView reloadData];
+    }];
 }
 
 #pragma mark -- dataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return self.dataSource.count;
 }
 
 
@@ -36,9 +44,16 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dell"];
     }
-    cell.textLabel.text = @"test";
+    NSDictionary *dic = self.dataSource[indexPath.row];
+    cell.textLabel.text = dic[@"messageContent"];
     cell.imageView.image = [UIImage imageNamed:@"msg"];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MessageDetailViewController *vc = [MessageDetailViewController new];
+    [vc setInfoWithDic:self.dataSource[indexPath.row]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -- getter
@@ -63,6 +78,7 @@
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.tableFooterView = [[UIView alloc] init];
         _tableView.dataSource = self;
+        _tableView.delegate = self;
     }
     return _tableView;
 }

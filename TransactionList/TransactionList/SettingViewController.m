@@ -9,13 +9,18 @@
 #import "SettingViewController.h"
 #import "SettingViewModel.h"
 
-@interface SettingViewController ()
+@interface SettingViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>{
+    
+}
 @property (nonatomic,strong) UITextField *tel;
 @property (nonatomic,strong) UILabel *genderLabel;
 @property (nonatomic,strong) UILabel *ageLabel;
 @property (nonatomic,strong) UILabel *nameLabel;
 @property (nonatomic,strong) UIButton *chBtn;
 @property (nonatomic,strong) SettingViewModel *svm;
+@property (nonatomic,strong) UIButton *iconBtn;
+@property (nonatomic,strong) AlertHelper *helper;
+@property (nonatomic,strong) NSString *wPassword;
 @end
 
 @implementation SettingViewController
@@ -40,22 +45,104 @@
 }
 
 - (void)changePassword{
-    AlertHelper *helper = [AlertHelper shareHelper];
-    [helper alertWithTitle:@"修改密码" message:@"请输入新密码" viewController:self];
-    [helper setCancelBtnWithTitle:@"不改了" handlerBlock:^{
+    _helper = [AlertHelper shareHelper];
+    __weak typeof(self) weakSelf  = self;
+    [_helper alertWithTitle:@"修改密码" message:@"请输入新密码" viewController:self];
+    [_helper setCancelBtnWithTitle:@"不改了" handlerBlock:^{
         
     }];
-    [helper setDefaultBtnWithTitle:@"确定修改" handlerBlock:^{
+    [_helper setDefaultBtnWithTitle:@"确定修改" handlerBlock:^{
+
+        NSString *newPassword = weakSelf.helper.alert.textFields.lastObject.text;
+        if (newPassword.length>6) {
+            [weakSelf.svm changePasswordWith:newPassword complete:^(BOOL isSuccess) {
+                
+            }];
+        }
         
     }];
-    [helper addTextFieldWithBlock:^(NSString *textString) {
-        
+    [_helper addTextFieldWithBlock:^(NSString *textString) {
+        weakSelf.wPassword = textString;
+        NSLog(@"%@",textString);
     }];
-    [helper show];
+    [_helper show];
 }
 
 - (void)iconBtn_click{
+    [self alterHeadPortrait];
+}
+
+//保存图片
+-(void)saveImageDocuments:(UIImage *)image{
     
+    int userId = [[[CurrentUserInfo defaultUserInfo] getUserInfo][@"userId"] intValue];
+    
+    //拿到图片
+    UIImage *imagesave = image;
+    NSString *path_sandox = NSHomeDirectory();
+    //设置一个图片的存储路径
+    NSString *imagePath = [path_sandox stringByAppendingString:[NSString stringWithFormat:@"/Documents/myimages%d",userId]];
+    //把图片直接保存到指定的路径（同时应该把图片的路径imagePath存起来，下次就可以直接用来取）
+    [UIImagePNGRepresentation(imagesave) writeToFile:imagePath atomically:YES];
+    [self.svm changeUserIconWith:imagePath complete:nil];
+}
+// 读取并存贮到相册
+-(UIImage *)getDocumentImage{
+    int userId = [[[CurrentUserInfo defaultUserInfo] getUserInfo][@"userId"] intValue];
+    // 读取沙盒路径图片
+    NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/myimages%d",NSHomeDirectory(),userId];
+    // 拿到沙盒路径图片
+    UIImage *imgFromUrl3=[[UIImage alloc]initWithContentsOfFile:aPath3];
+    // 图片保存相册
+    UIImageWriteToSavedPhotosAlbum(imgFromUrl3, self, nil, nil);
+    return imgFromUrl3;
+}
+
+//  方法：alterHeadPortrait
+-(void)alterHeadPortrait{
+    /**
+     *  弹出提示框
+     */
+    //初始化提示框
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    //按钮：从相册选择，类型：UIAlertActionStyleDefault
+    [alert addAction:[UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //初始化UIImagePickerController
+        UIImagePickerController *PickerImage = [[UIImagePickerController alloc]init];
+        //获取方式1：通过相册（呈现全部相册），UIImagePickerControllerSourceTypePhotoLibrary
+        //获取方式2，通过相机，UIImagePickerControllerSourceTypeCamera
+        //获取方法3，通过相册（呈现全部图片），UIImagePickerControllerSourceTypeSavedPhotosAlbum
+        PickerImage.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        //允许编辑，即放大裁剪
+        PickerImage.allowsEditing = YES;
+        //自代理
+        PickerImage.delegate = self;
+        //页面跳转
+        [self presentViewController:PickerImage animated:YES completion:nil];
+    }]];
+    //按钮：拍照，类型：UIAlertActionStyleDefault
+    [alert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+        /**
+         其实和从相册选择一样，只是获取方式不同，前面是通过相册，而现在，我们要通过相机的方式
+         */
+        UIImagePickerController *PickerImage = [[UIImagePickerController alloc]init];
+        //获取方式:通过相机
+        PickerImage.sourceType = UIImagePickerControllerSourceTypeCamera;
+        PickerImage.allowsEditing = YES;
+        PickerImage.delegate = self;
+        [self presentViewController:PickerImage animated:YES completion:nil];
+    }]];
+    //按钮：取消，类型：UIAlertActionStyleCancel
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+//PickerImage完成后的代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    //定义一个newPhoto，用来存放我们选择的图片。
+    UIImage *newPhoto = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+   // [self.iconBtn setImage:newPhoto forState:UIControlStateNormal];
+    [self.iconBtn setBackgroundImage:newPhoto forState:UIControlStateNormal];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)logoutBtn_click{
@@ -91,6 +178,11 @@
     self.tel.text = dic[@"userTel"];
     self.genderLabel.text = [dic[@"userGender"] intValue]==0?@"女":@"男";
     self.ageLabel.text = [NSString stringWithFormat:@"%@",dic[@"userAge"]];
+    UIImage *image = [self getDocumentImage];
+    if (image == nil) {
+        image = [UIImage imageNamed:@"userIcon"];
+    }
+    //[self.iconBtn setBackgroundImage:image forState:UIControlStateNormal];
 }
 
 - (void)setupFrame{
@@ -99,7 +191,10 @@
     //上传头像
     UIButton *iconBtn = [UIButton new];
     [iconBtn setBackgroundImage:[UIImage imageNamed:@"userIcon"] forState:UIControlStateNormal];
+    iconBtn.layer.borderWidth = 1;
+    iconBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     iconBtn.layer.cornerRadius = 45;
+    iconBtn.clipsToBounds = YES;
     [iconBtn addTarget:self action:@selector(iconBtn_click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:iconBtn];
     [iconBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -107,6 +202,7 @@
         make.centerX.equalTo(weakSelf.view);
         make.top.equalTo(weakSelf.view).with.offset(90);
     }];
+    self.iconBtn = iconBtn;
     
     //用户名
     UILabel *iconLabel = [UILabel new];

@@ -9,7 +9,7 @@
 #import "AlertHelper.h"
 
 @interface AlertHelper ()
-@property(nonatomic,strong) UIAlertController *alert;
+
 @property (nonatomic,weak) UIViewController *mdelegate;
 @end
 

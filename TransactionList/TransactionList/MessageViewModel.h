@@ -12,4 +12,6 @@
 
 - (void)getAllMessageWithBlock:(void(^)(id messageData))block;
 
+- (void)getUserNameByUserId:(int)userId completeBlock:(void(^)(id data))block;
+
 @end

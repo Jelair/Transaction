@@ -11,5 +11,7 @@
 @interface SettingViewModel : NSObject
 
 - (void)changeTelWith:(NSString *)tel complete:(void(^)(BOOL isSuccess))block;
+- (void)changePasswordWith:(NSString *)password complete:(void(^)(BOOL isSuccess))block;
+- (void)changeUserIconWith:(NSString *)iconStr complete:(void(^)(BOOL isSuccess))block;
 
 @end

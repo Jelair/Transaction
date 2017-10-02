@@ -29,6 +29,12 @@
     return users;
 }
 
+- (NSArray *)getUserNameBy:(int)userId{
+    NSString *sql = [NSString stringWithFormat:@"SELECT userName FROM user WHERE userId = %d",userId];
+    NSArray *names = [self qureyWithSql:sql];
+    return names;
+}
+
 - (void)lookUsers{
     NSArray *users = [self qureyWithSql:@"SELECT * FROM user"];
     NSLog(@"%s----%@",__FUNCTION__,users);
@@ -64,7 +70,7 @@
 #pragma mark -- 联系人操作接口
 //返回一个用户的所有联系人
 - (NSArray *)getAllContractByUser:(int)userId{
-    NSString *sql = [NSString stringWithFormat:@"SELECT `user`.userId,`user`.userAge,`user`.userGender,`user`.userName,`user`.userTel,`user`.userIcon,userrelations.userRelationsTime FROM user RIGHT JOIN userrelations ON `user`.userId = userrelations.contractId WHERE `userRelations`.userId = %d",userId];
+    NSString *sql = [NSString stringWithFormat:@"SELECT `user`.userId,`user`.userAge,`user`.userGender,`user`.userName,`user`.userTel,`user`.userIcon,userrelations.userRelationsTime FROM userrelations LEFT JOIN user ON `user`.userId = userrelations.contractId WHERE `userRelations`.userId = %d",userId];
     NSArray *array = [self qureyWithSql:sql];
     return array;
 }
@@ -151,5 +157,11 @@
     return b1&&b2;
 }
 
+//
+- (NSArray *)getUndoMessageByUserId:(int)userId{
+    NSString *sql = [NSString stringWithFormat:@"SELECT 'message'.messageId,'message'.messageContent,'message'.messageIsRead,'message'.messageSenderId,'message'.messageSendTime,'message'.messageType FROM umRelations LEFT JOIN message ON 'umRelations'.messageId = 'message'.messageId WHERE 'umRelations'.recipientId = %d AND 'message'.messageIsRead = 0",userId];
+    NSArray *array = [self qureyWithSql:sql];
+    return array;
+}
 
 @end

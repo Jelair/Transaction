@@ -82,6 +82,7 @@
 		17A8A1371F7B313A009301CC /* ContractDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8A1361F7B313A009301CC /* ContractDetailView.m */; };
 		17AB58331F71EEFD00F39000 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AB58311F71EEFD00F39000 /* SigninViewController.m */; };
 		17AB58341F71EEFD00F39000 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AB58321F71EEFD00F39000 /* SigninViewController.xib */; };
+		17BD221A1F7BAA3D00043CE2 /* MessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BD22191F7BAA3D00043CE2 /* MessageDetailViewController.m */; };
 		17C05CEF1F789F6100E52609 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C05CED1F789F6100E52609 /* Fabric.framework */; };
 		17C05CF01F789F6100E52609 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C05CEE1F789F6100E52609 /* Crashlytics.framework */; };
 		17CB62901F6B7C2C0048B7C7 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CB628F1F6B7C2C0048B7C7 /* LoginModel.m */; };
@@ -239,6 +240,8 @@
 		17AB58301F71EEFD00F39000 /* SigninViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
 		17AB58311F71EEFD00F39000 /* SigninViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
 		17AB58321F71EEFD00F39000 /* SigninViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
+		17BD22181F7BAA3D00043CE2 /* MessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailViewController.h; sourceTree = "<group>"; };
+		17BD22191F7BAA3D00043CE2 /* MessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailViewController.m; sourceTree = "<group>"; };
 		17C05CED1F789F6100E52609 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		17C05CEE1F789F6100E52609 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		17CB628E1F6B7C2C0048B7C7 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
@@ -369,10 +372,6 @@
 				1744F5551F678F5E007B4681 /* Resource */,
 				1744F5541F678F53007B4681 /* Class */,
 				1744F5531F678F45007B4681 /* APPDelegate */,
-				1744F5221F676849007B4681 /* Main.storyboard */,
-				1744F5251F676849007B4681 /* Assets.xcassets */,
-				1744F5271F676849007B4681 /* LaunchScreen.storyboard */,
-				1744F52A1F676849007B4681 /* Info.plist */,
 				1744F5191F676849007B4681 /* Supporting Files */,
 			);
 			path = TransactionList;
@@ -381,6 +380,10 @@
 		1744F5191F676849007B4681 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1744F5221F676849007B4681 /* Main.storyboard */,
+				1744F5251F676849007B4681 /* Assets.xcassets */,
+				1744F5271F676849007B4681 /* LaunchScreen.storyboard */,
+				1744F52A1F676849007B4681 /* Info.plist */,
 				1744F51A1F676849007B4681 /* main.m */,
 				17CB62A51F6BA2770048B7C7 /* PrefixHeader.pch */,
 			);
@@ -823,6 +826,8 @@
 			children = (
 				17A728931F77677A0035465B /* MessageViewController.h */,
 				17A728941F77677A0035465B /* MessageViewController.m */,
+				17BD22181F7BAA3D00043CE2 /* MessageDetailViewController.h */,
+				17BD22191F7BAA3D00043CE2 /* MessageDetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1215,6 +1220,7 @@
 				17A728891F7765310035465B /* SettingViewController.m in Sources */,
 				179DF23A1F7A32DC00DB8225 /* SettingViewModel.m in Sources */,
 				1744F51E1F676849007B4681 /* AppDelegate.m in Sources */,
+				17BD221A1F7BAA3D00043CE2 /* MessageDetailViewController.m in Sources */,
 				17A7288C1F7767210035465B /* RecordViewController.m in Sources */,
 				174AE5E81F6A76A500229612 /* BaseView.m in Sources */,
 				17A7288F1F7767410035465B /* ContractViewController.m in Sources */,

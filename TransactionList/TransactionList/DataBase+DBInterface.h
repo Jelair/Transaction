@@ -17,7 +17,7 @@
 - (BOOL)addUser:(User *)user;
 //查找用户
 - (NSArray *)findUser:(NSString *)userAccount;
-
+- (NSArray *)getUserNameBy:(int)userId;
 - (void)lookUsers;
 //删除用户
 - (BOOL)deleteUser:(User *)user;
@@ -43,4 +43,6 @@
 - (BOOL)finishTask:(int)taskId;
 #pragma mark -- 消息操作接口
 - (BOOL)applyContractWith:(Message *)msg to:(int)contractId;
+
+- (NSArray *)getUndoMessageByUserId:(int)userId;
 @end

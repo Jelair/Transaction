@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface AlertHelper : NSObject
-
+@property(nonatomic,strong) UIAlertController *alert;
 + (AlertHelper *)shareHelper;
 - (void)alertWithTitle:(NSString *)title message:(NSString *)message viewController:(UIViewController *)vc;
 - (void)setCancelBtnWithTitle:(NSString *)title handlerBlock:(void(^)())block;

@@ -213,7 +213,8 @@
     
     UIButton *addShareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [addShareBtn setTitle:@"添加任务共享者" forState:UIControlStateNormal];
-    [addShareBtn setBackgroundColor:[UIColor greenColor]];
+    [addShareBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [addShareBtn setBackgroundColor:[UIColor clearColor]];
     addShareBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     addShareBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
     addShareBtn.layer.borderWidth = 1;
@@ -228,7 +229,8 @@
     
     UIButton *deleteShareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [deleteShareBtn setTitle:@"删除任务共享者" forState:UIControlStateNormal];
-    [deleteShareBtn setBackgroundColor:[UIColor redColor]];
+    [deleteShareBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [deleteShareBtn setBackgroundColor:[UIColor clearColor]];
     deleteShareBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     deleteShareBtn.layer.borderWidth = 1;
     deleteShareBtn.layer.borderColor = [UIColor lightGrayColor].CGColor;
